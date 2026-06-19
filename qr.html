@@ -16,88 +16,174 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 32px 20px;
+    padding: 28px 20px;
   }
   a { text-decoration: none; color: inherit; }
+  button { font-family: inherit; cursor: pointer; }
 
-  .card {
+  .page {
     width: 100%;
-    max-width: 600px;
-    background: #241A14;
-    border: 1px solid rgba(184, 114, 79, 0.28);
-    border-radius: 20px;
-    padding: 44px 40px 36px;
+    max-width: 800px;
   }
 
-  .eyebrow {
+  /* ===== Warning block (trên cùng) ===== */
+  .warning-block {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .warning-icon {
+    display: block;
+    margin: 0 auto 10px;
+  }
+  .warning-label {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #B8724F;
-    text-align: center;
-    margin-bottom: 22px;
+    color: #C2814F;
+    margin-bottom: 10px;
   }
-
-  .headline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.25;
-    color: #B8724F;
-    text-align: center;
-    margin-bottom: 14px;
-  }
-  .sub-text {
+  .warning-text {
     font-family: 'Source Serif 4', serif;
     font-size: 16px;
     line-height: 1.65;
-    color: rgba(250, 243, 234, 0.78);
+    color: rgba(250, 243, 234, 0.82);
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  /* ===== Card ===== */
+  .card {
+    background: #241A14;
+    border: 1px solid rgba(184, 114, 79, 0.28);
+    border-radius: 20px;
+    padding: 26px 40px 26px;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #C2814F;
     text-align: center;
-    max-width: 460px;
-    margin: 0 auto 28px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 0.5px solid rgba(250, 243, 234, 0.1);
+  }
+
+  /* ===== Payment grid (2 cột) ===== */
+  .payment-grid {
+    display: grid;
+    grid-template-columns: 300px 360px;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .col-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #E7D7CA;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    min-height: 42px;
   }
 
   /* ===== QR box ===== */
   .qr-box {
     background: #FAF3EA;
     border-radius: 12px;
-    padding: 22px;
+    padding: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 28px;
+    margin-bottom: 14px;
   }
   .qr-box img {
     width: 100%;
-    max-width: 260px;
+    max-width: 250px;
     height: auto;
     display: block;
   }
 
-  /* ===== Order info box (giống thank-you.html) ===== */
+  .btn-download-qr {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(184, 114, 79, 0.14);
+    border: 1px solid rgba(184, 114, 79, 0.5);
+    border-radius: 9px;
+    padding: 11px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #E7D7CA;
+  }
+  .btn-download-qr[disabled] { cursor: not-allowed; }
+
+  /* ===== Order info box (Cách 2) ===== */
   .order-box {
     background: rgba(0,0,0,0.18);
     border: 1px solid rgba(250, 243, 234, 0.08);
     border-radius: 12px;
-    padding: 6px 22px;
-    margin-bottom: 24px;
+    padding: 4px 20px;
+    margin-bottom: 14px;
   }
   .order-row {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 120px 1fr;
     align-items: baseline;
-    padding: 14px 0;
+    padding: 11px 0;
     border-top: 0.5px solid rgba(250, 243, 234, 0.08);
     font-family: 'Source Serif 4', serif;
-    font-size: 15.5px;
+    font-size: 15px;
+    gap: 14px;
   }
   .order-row:first-child { border-top: none; }
-  .order-row-label { color: rgba(250, 243, 234, 0.55); }
-  .order-row-value { color: #FAF3EA; font-weight: 600; }
+  .order-row-label { color: rgba(250, 243, 234, 0.55); flex-shrink: 0; }
+  .order-row-value { color: #E7D7CA; font-weight: 600; text-align: left; }
   .order-row-value.price { color: #B8724F; font-weight: 700; }
   .order-row-value.content { color: #B8724F; font-weight: 700; letter-spacing: 0.04em; }
+  .order-row-value.with-copy { display: flex; align-items: center; gap: 8px; justify-content: flex-start; }
+
+  .copy-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: rgba(184, 114, 79, 0.16);
+    border: 1px solid rgba(184, 114, 79, 0.45);
+    color: #C2814F;
+  }
+  .copy-btn[disabled] { cursor: not-allowed; }
+
+  /* ===== Note box (lưu ý nội dung CK) ===== */
+  .note-box {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    background: rgba(184, 114, 79, 0.1);
+    border: 1px solid rgba(184, 114, 79, 0.22);
+    border-radius: 10px;
+    padding: 13px 14px;
+  }
+  .note-box svg { flex-shrink: 0; margin-top: 1px; }
+  .note-box p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(250, 243, 234, 0.8);
+  }
+  .note-box p .highlight-accent {
+    color: #C2814F;
+    font-weight: 600;
+  }
 
   /* ===== Status ===== */
   .status-box {
@@ -108,7 +194,7 @@
     padding: 16px;
     border-radius: 10px;
     background: rgba(184, 114, 79, 0.1);
-    margin-bottom: 24px;
+    margin-top: 18px;
   }
   .status-dot {
     width: 9px;
@@ -126,7 +212,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 13.5px;
     font-weight: 600;
-    color: #FAF3EA;
+    color: #E7D7CA;
   }
   .status-box.is-paid {
     background: rgba(184, 114, 79, 0.22);
@@ -140,65 +226,143 @@
   /* ===== Footer note ===== */
   .footer-note {
     text-align: center;
-    margin-top: 4px;
-    padding-top: 22px;
-    border-top: 0.5px solid rgba(250, 243, 234, 0.1);
+    margin-top: 16px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     color: rgba(250, 243, 234, 0.5);
+    line-height: 1.7;
   }
   .footer-note a {
     color: #B8724F;
     font-weight: 600;
   }
 
-  @media (max-width: 480px) {
-    .card { padding: 32px 22px 28px; }
-    .headline { font-size: 26px; }
+  @media (max-width: 640px) {
+    .card { padding: 30px 22px 26px; }
+    .payment-grid { grid-template-columns: 1fr; gap: 30px; }
     .order-box { padding: 4px 16px; }
   }
 </style>
 </head>
 <body>
 
-<div class="card">
-  <p class="eyebrow">Bước cuối cùng</p>
-  <h1 class="headline">Quét mã để hoàn tất<br>đăng ký</h1>
-  <p class="sub-text">Mở app ngân hàng, quét mã QR bên dưới hoặc chuyển khoản đúng nội dung để hệ thống tự động xác nhận.</p>
+<div class="page">
 
-  <div class="qr-box">
-    <img id="qrImage" src="" alt="Mã QR thanh toán SePay">
+  <div class="warning-block">
+    <svg class="warning-icon" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="28" cy="28" r="27" fill="rgba(184, 114, 79, 0.12)"/>
+      <path d="M28 12L48 44H8L28 12Z" stroke="#B8724F" stroke-width="2.6" stroke-linejoin="round"/>
+      <rect x="26.1" y="23" width="3.8" height="14" rx="1.9" fill="#B8724F"/>
+      <rect x="26.1" y="39.5" width="3.8" height="3.8" rx="1.9" fill="#B8724F"/>
+    </svg>
+    <p class="warning-label">Lưu ý</p>
+    <p class="warning-text">Sau khi quét mã QR thanh toán chuyển khoản, anh chị vui lòng không thoát trang, hệ thống sẽ tự động chuyển hướng sau khi thanh toán được xác nhận (chỉ mất vài giây)</p>
   </div>
 
-  <div class="order-box">
-    <div class="order-row">
-      <span class="order-row-label">Mã đơn</span>
-      <span class="order-row-value" id="infoOrderId">—</span>
-    </div>
-    <div class="order-row">
-      <span class="order-row-label">Số tiền</span>
-      <span class="order-row-value price" id="infoAmount">—</span>
-    </div>
-    <div class="order-row">
-      <span class="order-row-label">Nội dung CK</span>
-      <span class="order-row-value content" id="infoContent">—</span>
-    </div>
-    <div class="order-row">
-      <span class="order-row-label">Ngân hàng</span>
-      <span class="order-row-value" id="infoBank">—</span>
-    </div>
-  </div>
+  <div class="card">
+    <h2 class="card-title">Thanh toán qua chuyển khoản ngân hàng</h2>
 
-  <div class="status-box" id="statusBox">
-    <span class="status-dot"></span>
-    <span class="status-text" id="statusText">Đang chờ xác nhận thanh toán...</span>
+    <div class="payment-grid">
+
+      <div class="pay-col">
+        <p class="col-label">Cách 1: Mở app ngân hàng/ Ví và quét mã QR</p>
+        <div class="qr-box">
+          <img id="qrImage" src="" alt="Mã QR thanh toán SePay">
+        </div>
+        <button type="button" class="btn-download-qr" id="downloadQrBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <span class="btn-download-qr-label">Tải ảnh QR</span>
+        </button>
+      </div>
+
+      <div class="pay-col">
+        <p class="col-label">Cách 2: Chuyển khoản thủ công theo thông tin</p>
+
+        <div class="order-box">
+          <!-- Giữ id để script gán giá trị — ẩn hiển thị vì không có trong layout mới, "Nội dung CK" bên dưới đã thể hiện cùng giá trị này -->
+          <div class="order-row" style="display:none">
+            <span class="order-row-label">Mã đơn</span>
+            <span class="order-row-value" id="infoOrderId">—</span>
+          </div>
+
+          <div class="order-row">
+            <span class="order-row-label">Ngân hàng</span>
+            <span class="order-row-value" id="infoBank">—</span>
+          </div>
+
+          <div class="order-row">
+            <span class="order-row-label">Thụ hưởng</span>
+            <span class="order-row-value">VŨ THỊ DUNG</span>
+          </div>
+
+          <div class="order-row">
+            <span class="order-row-label">Số tài khoản</span>
+            <span class="order-row-value with-copy">
+              <span id="infoAccountNumber">3567341358</span>
+              <button type="button" class="copy-btn" data-copy-target="infoAccountNumber" aria-label="Sao chép số tài khoản">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </button>
+            </span>
+          </div>
+
+          <div class="order-row">
+            <span class="order-row-label">Số tiền</span>
+            <span class="order-row-value price with-copy">
+              <span id="infoAmount">—</span>
+              <button type="button" class="copy-btn" data-copy-target="infoAmount" aria-label="Sao chép số tiền">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </button>
+            </span>
+          </div>
+
+          <div class="order-row">
+            <span class="order-row-label">Nội dung CK</span>
+            <span class="order-row-value content with-copy">
+              <span id="infoContent">—</span>
+              <button type="button" class="copy-btn" data-copy-target="infoContent" aria-label="Sao chép nội dung chuyển khoản">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                  <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </button>
+            </span>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#B8724F" stroke-width="1.6"/>
+            <rect x="11.1" y="7" width="1.8" height="7" rx="0.9" fill="#B8724F"/>
+            <rect x="11.1" y="15.5" width="1.8" height="1.8" rx="0.9" fill="#B8724F"/>
+          </svg>
+          <p>Vui lòng <span class="highlight-accent">giữ nguyên đúng nội dung chuyển khoản ở mục "Nội dung CK" phía trên</span> để hệ thống xác nhận thanh toán tự động.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="status-box" id="statusBox">
+      <span class="status-dot"></span>
+      <span class="status-text" id="statusText">Đang chờ xác nhận thanh toán...</span>
+    </div>
   </div>
 
   <div class="footer-note">
-    Đã chuyển khoản nhưng chưa thấy xác nhận sau vài phút? Nhắn trực tiếp cho mình qua
+    Đã chuyển khoản nhưng chưa thấy xác nhận sau vài phút?<br>
+    Nhắn trực tiếp cho mình qua
     <a href="https://www.facebook.com/vuthi.dung.5015" target="_blank" rel="noopener">Facebook</a>
     hoặc email <a href="mailto:alice.dungvu@gmail.com">alice.dungvu@gmail.com</a>
   </div>
+
 </div>
 
 <script>
@@ -253,6 +417,57 @@
 
   checkStatus();
   pollTimer = setInterval(checkStatus, 4000);
+</script>
+
+<script>
+  // ===== Tải ảnh QR xuống máy =====
+  var downloadQrBtn = document.getElementById('downloadQrBtn');
+  downloadQrBtn.addEventListener('click', function() {
+    var img = document.getElementById('qrImage');
+    if (!img || !img.src) return;
+
+    var fileName = 'QR-thanh-toan-' + (orderId || 'TIS') + '.png';
+
+    fetch(img.src)
+      .then(function(res) { return res.blob(); })
+      .then(function(blob) {
+        var blobUrl = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(blobUrl);
+      })
+      .catch(function() {
+        // Fallback nếu fetch ảnh cross-origin bị chặn: mở ảnh ở tab mới để người dùng tự lưu
+        window.open(img.src, '_blank');
+      });
+  });
+
+  // ===== Copy text vào clipboard (số tài khoản / số tiền / nội dung CK) =====
+  var copyButtons = document.querySelectorAll('.copy-btn');
+  copyButtons.forEach(function(btn) {
+    var defaultIcon = btn.innerHTML;
+    var checkIcon = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    btn.addEventListener('click', function() {
+      var targetId = btn.getAttribute('data-copy-target');
+      var targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+
+      var textToCopy = targetEl.textContent.trim();
+
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        btn.innerHTML = checkIcon;
+        setTimeout(function() {
+          btn.innerHTML = defaultIcon;
+        }, 1500);
+      });
+    });
+  });
 </script>
 
 </body>
