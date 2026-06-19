@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Inner Shift — Landing Page (Full)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; }
+  body { -webkit-font-smoothing: antialiased; }
+
+  /* ===== Divider chuyển tiếp S4 → S5 (cùng nền tối) ===== */
+  .s4-s5-divider-wrap {
+    background: #1A120D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px 56px;
+  }
+  .s4-s5-divider {
+    width: 100%;
+    max-width: 220px;
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, #B8724F 50%, transparent);
+  }
+
+  /* ===== S1 — Hero (hero_final.html) ===== */
+#s1,
+  #s1 { width: 100%; background: #1A120D; }
+#s1 { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+#s1 .hero {
+    width: 100%;
+    min-height: 100vh;
+    background: #1A120D;
+    display: flex;
+    flex-direction: column;
+  }
+/* TOP BAR */
+  #s1 .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 52px;
+    flex-shrink: 0;
+  }
+#s1 .promo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FAF3EA;
+  }
+#s1 .promo svg { width: 15px; height: 15px; opacity: 0.7; flex-shrink: 0; }
+#s1 .promo-price {
+    color: #B8724F;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+#s1 .cta-btn {
+    background: #B8724F;
+    color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+#s1 .topbar-divider {
+    height: 0.5px;
+    background: rgba(250, 243, 234, 0.15);
+    margin: 0 52px;
+    flex-shrink: 0;
+  }
+/* HERO BODY — dịch lên trên, thoáng phía dưới */
+  #s1 .hero-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    padding-bottom: 8vh;
+  }
+/* For-line — xa headline hơn */
+  #s1 .for-line {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.6;
+    color: #FAF3EA;
+    margin-bottom: 56px;
+    font-weight: 400;
+  }
+#s1 .for-line .hl {
+    color: #B8724F;
+    font-style: italic;
+  }
+/* Headline — Cormorant Garamond Bold */
+  #s1 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 1.13;
+    color: #FAF3EA;
+    letter-spacing: -0.01em;
+    margin: 0;
+    max-width: 1100px;
+  }
+#s1 .headline .hl { color: #B8724F; }
+/* Divider 1 — sau headline, gần hơn */
+  #s1 .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px auto;
+  }
+#s1 .divider-line { width: 100px; height: 0.5px; background: rgba(250, 243, 234, 0.12); }
+#s1 .divider-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(250, 243, 234, 0.2); }
+/* Subline — nhỏ hơn, gần headline hơn */
+  #s1 .subline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #FAF3EA;
+    margin: 0;
+  }
+/* Divider 2 — sau subline */
+  #s1 .divider2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px auto;
+  }
+/* Objection — to hơn */
+  #s1 .objection {
+    font-family: 'Source Serif 4', serif;
+    font-size: 21px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(250, 243, 234, 0.68);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ===== S2 — Intro Dung (section2_D_v6.html) ===== */
+#s2,
+  #s2 { width: 100%; background: #E7D7CA; }
+#s2 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s2 .section {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 52px;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+/* CỘT TRÁI — nội dung câu chuyện */
+  #s2 .left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+#s2 .hook {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2A221E;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+#s2 .hook em {
+    color: #B8724F;
+    font-style: italic;
+  }
+#s2 .twist em {
+    color: #B8724F;
+    font-style: italic;
+  }
+#s2 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3A2E28;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+#s2 .body-text strong {
+    font-weight: 600;
+    color: #2A221E;
+  }
+#s2 .twist {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2A221E;
+    line-height: 1.25;
+    margin: 20px 0 16px;
+    font-style: italic;
+  }
+#s2 .closing {
+    border-left: 2.5px solid #B8724F;
+    padding-left: 18px;
+  }
+#s2 .closing p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2A221E;
+    line-height: 1.8;
+  }
+/* CỘT PHẢI — ảnh + chào */
+  #s2 .right-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    justify-content: flex-start;
+    padding-top: 4px;
+  }
+#s2 .greeting {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #70715F;
+  }
+#s2 .avatar {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #C9B29D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #3A2E28;
+    max-height: 280px;
+  }
+
+  /* ===== S3 — Story (section3_story_v4.html) ===== */
+#s3,
+  #s3 { background: #F3E7DE; }
+#s3 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s3 .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+  }
+/* Headline */
+  #s3 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #2A221E;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+/* Body text — Source Serif 4 */
+  #s3 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3A2E28;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+#s3 .body-text em {
+    font-style: italic;
+    color: #2A221E;
+  }
+#s3 .body-text strong {
+    font-weight: 600;
+    color: #2A221E;
+  }
+#s3 .body-text .accent-italic {
+    font-style: italic;
+    font-weight: 600;
+    color: #A56A4D;
+  }
+/* Insight — font body, border-left accent để nhấn */
+  #s3 .insight {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2A221E;
+    line-height: 1.7;
+    border-left: 2.5px solid #B8724F;
+    padding-left: 22px;
+    margin: 28px 0;
+    font-style: normal;
+  }
+/* Bullets dấu chấm */
+  #s3 .bullets {
+    list-style: none;
+    margin: 20px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+#s3 .bullets li {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    color: #3A2E28;
+    line-height: 1.75;
+    padding-left: 20px;
+    position: relative;
+    text-align: justify;
+  }
+#s3 .bullets li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: #B8724F;
+    font-size: 22px;
+    line-height: 1.5;
+  }
+/* Khoảng nghỉ chuyển tiếp */
+  #s3 .transition-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: #2A221E;
+    text-align: center;
+    margin: 44px 0 16px;
+  }
+/* Big quote cuối — đậm, màu chữ thường (không accent) */
+  #s3 .big-quote {
+    font-family: 'Source Serif 4', serif;
+    font-size: 19px;
+    font-weight: 600;
+    font-style: normal;
+    color: #2A221E;
+    line-height: 1.7;
+    margin: 24px 0;
+  }
+/* Divider nhỏ */
+  #s3 .divider {
+    width: 40px;
+    height: 1px;
+    background: #C9B29D;
+    margin: 32px 0;
+  }
+
+  /* ===== S4 — Future Vision (section4_future_v3_1.html) ===== */
+#s4,
+  #s4 { background: #1A120D; }
+#s4 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s4 .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px 48px;
+  }
+/* Headline */
+  #s4 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #C9B29D;
+    line-height: 1.25;
+    margin-bottom: 36px;
+    text-align: justify;
+  }
+#s4 .headline .bold-plain {
+    color: #C9B29D;
+    font-weight: 700;
+    font-style: normal;
+  }
+#s4 .headline .bold-accent {
+    color: #B8724F;
+    font-weight: 700;
+    font-style: normal;
+  }
+/* Body chung */
+  #s4 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #C9B29D;
+    line-height: 1.75;
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+/* Chỉ bôi đậm — giữ màu chữ thường */
+  #s4 .body-text .bold-plain {
+    color: #C9B29D;
+    font-weight: 600;
+    font-style: normal;
+  }
+/* Bôi đậm + in nghiêng — dùng màu accent */
+  #s4 .body-text .accent-em {
+    color: #B8724F;
+    font-weight: 600;
+    font-style: italic;
+  }
+/* Khoảng nghỉ giữa 2 đoạn lớn */
+  #s4 .breath {
+    height: 32px;
+  }
+/* Câu kết Inner Shift */
+  #s4 .pivot {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #C9B29D;
+    line-height: 1.75;
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 0.5px solid rgba(201,178,157,0.2);
+    text-align: justify;
+  }
+#s4 .pivot strong {
+    color: #B8724F;
+    font-weight: 600;
+  }
+#s4 .pivot em {
+    color: #B8724F;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* ===== S5 — Mechanism / 3 Tang (section5_final_v3.html) ===== */
+#s5,
+  #s5 { background: #1A120D; }
+#s5 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s5 .section { max-width: 720px; margin: 0 auto; padding: 48px 48px 88px; }
+#s5 .headline { font-family: 'Cormorant Garamond', serif; font-size: 35px; font-weight: 700; color: #A56A4D; line-height: 1.2; margin-bottom: 24px; text-align: center; }
+#s5 .intro-text { font-family: 'Source Serif 4', serif; font-size: 17px; font-weight: 400; color: #C9B29D; line-height: 1.75; margin-bottom: 10px; text-align: justify; }
+#s5 .intro-text strong { font-weight: 600; color: #FAF3EA; }
+#s5 .intro-text em { font-style: italic; }
+#s5 .cards-col { display: flex; flex-direction: column; gap: 20px; margin-top: 36px; }
+#s5 .card { border-radius: 8px; overflow: hidden; }
+#s5 .card-header { background: #A56A4D; padding: 18px 24px; text-align: center; }
+#s5 .card-header-label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250,243,234,0.7); display: block; margin-bottom: 8px; }
+#s5 .card-header-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #FAF3EA; line-height: 1.2; }
+#s5 .card-body { background: #2A1E18; padding: 20px 24px; }
+#s5 .card-body p { font-family: 'Source Serif 4', serif; font-size: 17px; font-weight: 400; color: #C9B29D; line-height: 1.75; margin-bottom: 10px; text-align: justify; }
+#s5 .card-body p:last-child { margin-bottom: 0; }
+#s5 .card-body ul { list-style: none; margin: 8px 0 10px; display: flex; flex-direction: column; gap: 8px; }
+#s5 .card-body ul li { font-family: 'Source Serif 4', serif; font-size: 17px; color: #C9B29D; line-height: 1.7; padding-left: 18px; position: relative; text-align: left; }
+#s5 .card-body ul li::before { content: "·"; position: absolute; left: 0; color: #A56A4D; font-size: 20px; line-height: 1.35; }
+/* PLACEHOLDER cho strong/em — sẽ được thay thế */
+  #s5 .card-body strong { font-weight: 600; color: #B8724F; }
+#s5 .card-body em { font-style: italic; color: #B8724F; }
+
+  /* ===== S6 — Lien he doi tuong (section6_lienhe_v1.html) ===== */
+#s6,
+  #s6 { background: #F3E7DE; }
+#s6 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s6 .section { max-width: 680px; margin: 0 auto; padding: 80px 48px 96px; }
+/* Headline */
+  #s6 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px; font-weight: 700;
+    color: #2A221E; line-height: 1.25;
+    margin-bottom: 28px;
+  }
+/* 6 dấu hiệu dạng checklist */
+  #s6 .checklist {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 32px;
+  }
+#s6 .checklist li {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; font-weight: 400;
+    color: #3A2E28; line-height: 1.75;
+    padding-left: 28px;
+    position: relative;
+    text-align: justify;
+  }
+#s6 .checklist li::before {
+    content: "•";
+    position: absolute; left: 0;
+    color: #B8724F;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+/* Closing — Dung nói */
+  #s6 .closing-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px; font-weight: 700;
+    font-style: italic;
+    color: #2A221E; line-height: 1.35;
+    margin-bottom: 14px;
+  }
+#s6 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; font-weight: 400;
+    color: #3A2E28; line-height: 1.75;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+#s6 .body-text strong { font-weight: 600; color: #2A221E; }
+
+  /* ===== S7 — Gioi thieu 12 ngay (section7_v5.html) ===== */
+/* ─── RESET ─── */
+  
+  #s7 ul { list-style: none; }
+/* ─── SECTION WRAPPER ─── */
+  #s7 .s7 {
+    background: #E7D7CA;
+    padding: 80px 0 72px;
+    font-family: 'Inter', sans-serif;
+  }
+#s7 .s7-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+/* ─── INTRO BLOCK ─── */
+  #s7 .s7-eyebrow { display: none; }
+#s7 .s7-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #3A2E28;
+    line-height: 1.15;
+    margin-bottom: 0;
+    text-align: center;
+  }
+#s7 .s7-headline .s7-headline-sub {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: #8B5A35;
+    margin-top: 8px;
+  }
+#s7 .s7-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    color: #3A2E28;
+    line-height: 1.78;
+    text-align: justify;
+    max-width: 660px;
+    width: 100%;
+    margin: 0 auto 14px;
+  }
+#s7 .s7-body:first-of-type {
+    margin-top: 20px;
+  }
+#s7 .s7-body:last-of-type {
+    margin-bottom: 14px;
+  }
+/* ─── BORDERED LIST BOX ─── */
+  #s7 .s7-listbox {
+    border: 1px solid rgba(42, 34, 30, 0.2);
+    border-radius: 8px;
+    padding: 26px 30px;
+    margin-top: 28px;
+    margin-bottom: 52px;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+#s7 .s7-listbox-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #70715F;
+    margin-bottom: 18px;
+  }
+#s7 .s7-listbox ul {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+#s7 .s7-listbox li {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    color: #3A2E28;
+    line-height: 1.68;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+  }
+#s7 .s7-listbox li::before {
+    content: '•';
+    color: #B8724F;
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-top: 3px;
+  }
+/* ─── DIVIDER ─── */
+  #s7 .s7-divider {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0 auto 52px;
+    width: 120px;
+  }
+#s7 .s7-divider::before,
+  #s7 .s7-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(42, 34, 30, 0.15);
+  }
+#s7 .s7-divider-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(42, 34, 30, 0.2);
+    margin: 0 8px;
+  }
+/* ─── LỘ TRÌNH INTRO ─── */
+  #s7 .s7-ldt-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #3A2E28;
+    letter-spacing: 0;
+    text-transform: none;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+#s7 .s7-ldt-headline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3A2E28;
+    line-height: 1.78;
+    margin-bottom: 10px;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
+#s7 .s7-ldt-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px;
+    color: #3A2E28;
+    line-height: 1.78;
+    margin-bottom: 44px;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
+/* ─── PHASE BLOCK ─── */
+  #s7 .phase {
+    margin-bottom: 44px;
+  }
+#s7 .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(42, 34, 30, 0.12);
+    margin-bottom: 8px;
+  }
+#s7 .phase-pill {
+    background: #3A2E28;
+    color: #C9B29D;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 13px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+#s7 .phase-meta { flex: 1; }
+#s7 .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #8B5A35;
+    line-height: 1.2;
+  }
+#s7 .phase-days {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #70715F;
+    font-weight: 500;
+    margin-top: 3px;
+  }
+/* ─── DAY ROW ─── */
+  #s7 .day-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(42, 34, 30, 0.07);
+  }
+#s7 .day-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+/* ─── THUMBNAIL ─── */
+  #s7 .day-thumb {
+    width: 224px;
+    min-width: 224px;
+    height: 160px;
+    background: #C9B29D;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+#s7 .day-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+#s7 .day-thumb-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #8B5A35;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+#s7 .day-thumb-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8B5A35;
+    opacity: 0.65;
+    position: relative;
+    z-index: 1;
+  }
+/* ─── DAY CONTENT ─── */
+  #s7 .day-content { flex: 1; padding-top: 2px; }
+#s7 .day-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #70715F;
+    margin-bottom: 7px;
+  }
+#s7 .day-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2A221E;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+#s7 .day-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+#s7 .day-bullets li {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    color: #3A2E28;
+    line-height: 1.65;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+#s7 .day-bullets li::before {
+    content: '•';
+    color: #B8724F;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+/* ─── PHASE SEPARATOR ─── */
+  #s7 .phase-sep {
+    border: none;
+    border-top: 1px solid rgba(42, 34, 30, 0.1);
+    margin: 0 0 44px;
+  }
+/* ─── CTA ─── */
+  #s7 .s7-cta {
+    text-align: center;
+    padding-top: 20px;
+  }
+#s7 .s7-cta-btn {
+    display: inline-block;
+    background: #B8724F;
+    color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 15px 44px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  /* ===== S8 — Bonus (section8_bonus_v2.html) ===== */
+#s8,
+  #s8 { background: #1A120D; }
+#s8 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s8 .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 72px 48px 88px;
+  }
+/* Intro headline */
+  #s8 .intro {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+#s8 .intro-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #70715F; display: block; margin-bottom: 14px;
+  }
+#s8 .intro-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px; font-weight: 700;
+    color: #B8724F; line-height: 1.15;
+    margin-bottom: 12px;
+  }
+#s8 .intro-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: #C9B29D; line-height: 1.4;
+  }
+/* Layout B — 1 cột dọc border-left */
+  #s8 .bonus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+#s8 .bonus-item {
+    border-left: 2px solid #B8724F;
+    padding: 0 0 28px 24px;
+  }
+#s8 .bonus-item:last-child {
+    padding-bottom: 0;
+  }
+#s8 .bonus-divider {
+    height: 0.5px;
+    background: rgba(201,178,157,0.12);
+    margin: 0 0 28px 24px;
+  }
+#s8 .bonus-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #70715F;
+    display: block; margin-bottom: 8px;
+  }
+#s8 .bonus-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 400;
+    color: #B8724F; line-height: 1.25;
+    margin-bottom: 12px;
+  }
+#s8 .bonus-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; font-weight: 400;
+    color: #C9B29D; line-height: 1.75;
+    margin-bottom: 8px;
+  }
+#s8 .bonus-body:last-child { margin-bottom: 0; }
+
+  /* ===== S9 — Pricing / CTA (section9_pricing_v5.html) ===== */
+#s9,
+  #s9 { background: #F3E7DE; }
+#s9 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s9 .section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 64px 44px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+#s9 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 700;
+    color: #2A221E; line-height: 1.25;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+#s9 .card {
+    background: #FAF3EA;
+    border-radius: 10px;
+    box-shadow: 0 2px 28px rgba(58,46,40,0.1);
+    width: 100%;
+    padding: 28px 36px 24px;
+  }
+#s9 .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600;
+    color: #2A221E; text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 0.5px solid rgba(58,46,40,0.1);
+  }
+#s9 .checklist {
+    list-style: none;
+    display: flex; flex-direction: column;
+    gap: 13px;
+    margin-bottom: 26px;
+  }
+#s9 .checklist li {
+    display: flex; gap: 11px; align-items: flex-start;
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px; color: #3A2E28; line-height: 1.65;
+  }
+#s9 .check-icon {
+    width: 17px; height: 17px;
+    border: 1.5px solid #B8724F;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+    font-size: 9px; color: #B8724F;
+  }
+#s9 .check-label { font-weight: 600; color: #2A221E; }
+#s9 .dot { color: #B8724F; font-size: 14px; }
+#s9 .pricing-block {
+    background: #E7D7CA;
+    border-radius: 8px;
+    padding: 20px 24px;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+#s9 .price-original {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: #70715F;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+#s9 .price-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #B8724F; margin-bottom: 8px;
+  }
+#s9 .price-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 700;
+    color: #B8724F; line-height: 1;
+    margin-bottom: 14px;
+  }
+#s9 .price-divider {
+    height: 0.5px;
+    background: rgba(58,46,40,0.15);
+    margin: 0 0 12px;
+  }
+#s9 .price-note {
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px; font-style: italic;
+    color: #70715F; line-height: 1.65;
+    margin-bottom: 3px;
+    text-align: center;
+  }
+#s9 .cta-btn {
+    display: block; width: 100%;
+    background: #B8724F; color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 15px; border-radius: 6px;
+    border: none; cursor: pointer; text-align: center;
+  }
+#s9 .refund {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: #70715F;
+    margin-top: 10px;
+  }
+
+  /* ===== S10 — Why Price (section10_why_price.html) ===== */
+#s10,
+  #s10 { background: #E7D7CA; }
+#s10 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s10 .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px;
+  }
+/* Headline — Cormorant, #8B5A35, cùng tone S3 nền sáng */
+  #s10 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: #2A221E;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+/* Body — Source Serif 4 17px #3A2E28, line-height 1.85, không tự ngắt */
+  #s10 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #3A2E28;
+    margin-bottom: 0;
+  }
+#s10 .body-text + .body-text {
+    margin-top: 16px;
+  }
+#s10 .body-note {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.85;
+    color: #3A2E28;
+    margin-top: 16px;
+    margin-bottom: 28px;
+  }
+/* Card gọn dọc, căn giữa, không trải rộng */
+  #s10 .card {
+    background: #D4C9BC;
+    border-radius: 8px;
+    padding: 18px 28px 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+#s10 .price-original {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #70715F;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+#s10 .price-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #B8724F;
+    margin-bottom: 8px;
+  }
+#s10 .price-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #B8724F;
+    line-height: 1;
+  }
+#s10 .card-divider {
+    height: 0.5px;
+    background: rgba(58,46,40,0.15);
+    margin: 14px 0 12px;
+  }
+#s10 .cta-btn {
+    display: block;
+    width: 100%;
+    background: #B8724F;
+    color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 13px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+#s10 .refund {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #70715F;
+  }
+
+  /* ===== S11 — Cam ket hoan tien (section11_guarantee_v2.html) ===== */
+#s11,
+  #s11 { background: #1A120D; }
+#s11 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s11 .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 40px 88px;
+  }
+/* ── EYEBROW ── */
+  #s11 .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #70715F;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+/* ── SEAL ── */
+  #s11 .seal-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+#s11 .seal {
+    width: 80px;
+    height: 80px;
+    border: 1.5px solid #B8724F;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+#s11 .seal-inner {
+    display: contents;
+  }
+#s11 .seal-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #B8724F;
+    line-height: 1;
+  }
+#s11 .seal-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #C9B29D;
+  }
+/* ── HEADLINE ── */
+  #s11 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #E8D5C0;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+#s11 .headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: #B8724F;
+  }
+/* ── DIVIDER CHẤM ── */
+  #s11 .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 44px;
+    opacity: 0.2;
+  }
+#s11 .divider-line { width: 80px; height: 1px; background: #FAF3EA; }
+#s11 .divider-dot { width: 4px; height: 4px; border-radius: 50%; background: #FAF3EA; }
+/* ── BODY TEXT ── */
+  #s11 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.85;
+    color: #C9B29D;
+    text-align: justify;
+    margin-bottom: 16px;
+  }
+#s11 .body-text strong {
+    color: #B8724F;
+    font-weight: 600;
+  }
+/* ── ĐIỀU KIỆN LIST TỰ DO ── */
+  #s11 .conditions-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 20px 0 36px;
+  }
+#s11 .conditions-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #C9B29D;
+  }
+#s11 .bullet {
+    color: #B8724F;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+/* ── NOTE BORDER-LEFT ── */
+  #s11 .note {
+    border-left: 2px solid #B8724F;
+    padding-left: 20px;
+    margin-bottom: 44px;
+  }
+#s11 .note-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #C9B29D;
+  }
+#s11 .cta-note {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #70715F;
+    margin-top: 10px;
+    letter-spacing: 0.03em;
+  }
+#s11 .cta-wrap { text-align: center; }
+#s11 .cta-btn {
+    display: inline-block;
+    background: #B8724F;
+    color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 44px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* ===== S12 — FAQ (section12_faq_v2_2.html) ===== */
+#s12,
+  #s12 { background: #F3E7DE; }
+#s12 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+#s12 .section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px 64px;
+  }
+/* ── HEADLINE ── */
+  #s12 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #2A221E;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+/* ── ACCORDION LIST ── */
+  #s12 .faq-list {
+    list-style: none;
+    border-top: 0.5px solid rgba(42,34,30,0.15);
+  }
+#s12 .faq-item {
+    border-bottom: 0.5px solid rgba(42,34,30,0.15);
+  }
+#s12 .faq-trigger {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    padding: 14px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+#s12 .faq-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #B8724F;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    padding-top: 3px;
+    min-width: 28px;
+  }
+#s12 .faq-question {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #2A221E;
+    line-height: 1.5;
+    flex: 1;
+  }
+#s12 .faq-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #B8724F;
+    flex-shrink: 0;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    border: 0.5px solid rgba(184,114,79,0.4);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+    margin-top: 2px;
+  }
+/* ── ANSWER ── */
+  #s12 .faq-answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+#s12 .faq-answer-inner {
+    padding: 0 0 16px 44px;
+  }
+#s12 .faq-answer-inner p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #3A2E28;
+    margin-bottom: 8px;
+  }
+#s12 .faq-answer-inner p:last-child {
+    margin-bottom: 0;
+  }
+/* ── OPEN STATE ── */
+  #s12 .faq-item.is-open .faq-icon {
+    transform: rotate(45deg);
+  }
+#s12 .faq-item.is-open .faq-trigger {
+    padding-bottom: 12px;
+  }
+#s12 .faq-item.is-open .faq-question {
+    color: #8B5A35;
+  }
+
+  /* ===== S13 — Closing (section13_closing_v2.html) ===== */
+#s13 { font-family: 'Source Serif 4', serif; -webkit-font-smoothing: antialiased; }
+/* ── TOP: Bridge #E7D7CA ── */
+  #s13 .top { background: #E7D7CA; }
+#s13 .top-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px 56px;
+  }
+#s13 .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px; font-weight: 700;
+    color: #2A221E; line-height: 1.3;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+#s13 .body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; font-weight: 400;
+    line-height: 1.85; color: #3A2E28;
+    margin-bottom: 6px;
+  }
+#s13 .pivot {
+    border-left: 2.5px solid #B8724F;
+    padding-left: 20px;
+    margin: 20px 0 20px;
+  }
+#s13 .pivot p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-style: italic; font-weight: 600;
+    color: #3A2E28; line-height: 1.55;
+  }
+#s13 .divider {
+    display: flex; align-items: center; gap: 10px;
+    margin: 24px 0; opacity: 0.15;
+  }
+#s13 .divider-line { flex: 1; height: 1px; background: #3A2E28; }
+#s13 .divider-dot { width: 4px; height: 4px; border-radius: 50%; background: #3A2E28; flex-shrink: 0; }
+#s13 .h2-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 700;
+    color: #2A221E; line-height: 1.2;
+    margin-bottom: 10px;
+  }
+#s13 .h2-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px; font-weight: 400;
+    line-height: 1.85; color: #3A2E28;
+    margin-bottom: 6px;
+  }
+/* ── BOTTOM: Tối #1A120D ── */
+  #s13 .bottom { background: #1A120D; }
+#s13 .bottom-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 52px 40px 72px;
+    text-align: center;
+  }
+#s13 .decision {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 600;
+    color: #B8724F; line-height: 1.4;
+    margin-bottom: 6px;
+  }
+#s13 .decision-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18px; font-style: italic; font-weight: 400;
+    color: #C9B29D; line-height: 1.6;
+    margin-bottom: 32px;
+  }
+#s13 .bottom-divider {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 20px; opacity: 0.15;
+  }
+#s13 .bottom-divider-line { width: 60px; height: 1px; background: #FAF3EA; }
+#s13 .bottom-divider-dot { width: 4px; height: 4px; border-radius: 50%; background: #FAF3EA; }
+#s13 .price-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #70715F; margin-bottom: 4px;
+  }
+#s13 .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 700;
+    color: #E8D5C0; line-height: 1;
+    margin-bottom: 22px;
+  }
+#s13 .cta {
+    display: inline-block;
+    background: #B8724F; color: #FAF3EA;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 14px 52px; border-radius: 5px;
+    border: none; cursor: pointer;
+    margin-bottom: 10px;
+  }
+#s13 .cta-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: #70715F;
+    display: block; margin-top: 2px;
+  }
+
+  /* ===================================================== */
+  /* MODAL ĐĂNG KÝ — "Thông tin đăng ký"                     */
+  /* ===================================================== */
+
+  .tis-modal-overlay{
+    display:none;
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(20,14,10,0.68);
+    backdrop-filter:blur(4px);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+
+  .tis-modal-overlay.open{
+    display:flex;
+  }
+
+  .tis-modal{
+    width:100%;
+    max-width:420px;
+    background:#FFFFFF;
+    border-radius:14px;
+    padding:30px 28px 26px;
+    position:relative;
+    max-height:90vh;
+    overflow-y:auto;
+    animation:tisModalIn 0.22s ease;
+    box-shadow:0 24px 60px rgba(26,18,13,0.25);
+  }
+
+  @keyframes tisModalIn{
+    from{ opacity:0; transform:translateY(10px) scale(0.98); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .tis-modal-close{
+    position:absolute;
+    top:14px;
+    right:14px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#8A7A6D;
+    transition:background 0.15s, color 0.15s;
+  }
+  .tis-modal-close:hover{ background:rgba(184,114,79,0.1); color:#B8724F; }
+
+  .tis-modal h2{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+    font-size:23px;
+    color:#1A120D;
+    text-align:center;
+    margin-bottom:20px;
+    letter-spacing:-0.01em;
+  }
+
+  .tis-field{
+    margin-bottom:14px;
+  }
+
+  .tis-field label{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    color:#1A120D;
+    margin-bottom:6px;
+    letter-spacing:0.01em;
+  }
+
+  .tis-field label .req{
+    color:#B8724F;
+    margin-left:2px;
+  }
+
+  .tis-field input{
+    width:100%;
+    padding:11px 14px;
+    font-family:'Inter',sans-serif;
+    font-size:14.5px;
+    font-weight:500;
+    color:#1A120D;
+    background:#FCFAF8;
+    border:1.5px solid #DCC9BA;
+    border-radius:7px;
+    outline:none;
+    transition:border-color 0.2s, background 0.2s;
+  }
+
+  .tis-field input::placeholder{ color:#A39184; font-weight:400; }
+  .tis-field input:focus{ border-color:#B8724F; background:#fff; }
+
+  .tis-field .tis-error{
+    display:none;
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    font-weight:500;
+    color:#B3261E;
+    margin-top:5px;
+  }
+  .tis-field.has-error input{ border-color:#B3261E; }
+  .tis-field.has-error .tis-error{ display:block; }
+
+  .tis-hint{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    color:#70715F;
+    margin-top:5px;
+    line-height:1.45;
+  }
+
+  .tis-submit{
+    width:100%;
+    margin-top:6px;
+    padding:14px;
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:#FFFFFF;
+    background:#B8724F;
+    border:none;
+    border-radius:7px;
+    cursor:pointer;
+    transition:opacity 0.2s, transform 0.1s;
+  }
+  .tis-submit:hover{ opacity:0.92; }
+  .tis-submit:active{ transform:scale(0.99); }
+  .tis-submit:disabled{ opacity:0.6; cursor:not-allowed; }
+
+  .tis-trust{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin-top:14px;
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    font-weight:500;
+    color:#70715F;
+  }
+
+  .tis-trust svg{ flex-shrink:0; }
+
+  body.tis-modal-active{ overflow:hidden; }
+
+  @media (max-width:480px){
+    .tis-modal{ padding:26px 22px 22px; }
+    .tis-modal h2{ font-size:20px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== S1 — Hero (hero_final.html) ===== -->
+<div id="s1">
+<section class="hero">
+
+  <header>
+    <div class="topbar">
+      <div class="promo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FAF3EA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
+        </svg>
+        <span>Ưu đãi mở bán</span>
+        <span class="promo-price">590.000</span>
+      </div>
+      <button class="cta-btn tis-cta-trigger">Tham gia ngay &nbsp;→</button>
+    </div>
+    <div class="topbar-divider"></div>
+  </header>
+
+  <main class="hero-body">
+
+    <p class="for-line">
+      Dành cho những người muốn được <span class="hl">thấu hiểu</span> và <span class="hl">yêu thương</span> từ chính con người thật của mình.
+    </p>
+
+    <h1 class="headline">
+      <span class="hl">The Inner Shift:</span> Cách trở thành một người<br>
+      <span class="hl">chân thật, tự nhiên, có sức hút riêng</span><br>
+      khi kết nối với người khác.
+    </h1>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="subline">Không cần gồng lên để được chấp nhận.</p>
+
+    <div class="divider2">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="objection">Ngay cả khi bạn nghĩ mình quá nhạy cảm, lo nghĩ nhiều và khó thay đổi.</p>
+
+  </main>
+
+</section>
+</div>
+
+<!-- ===== S2 — Intro Dung (section2_D_v6.html) ===== -->
+<div id="s2">
+<section class="section">
+
+  <!-- CỘT TRÁI — câu chuyện -->
+  <div class="left-col">
+
+    <h2 class="hook">Câu chuyện của mình bắt đầu từ <em>một ảo tưởng.</em></h2>
+
+    <p class="body-text">Mình từng nghĩ bản thân là người giỏi kết nối.</p>
+
+    <p class="body-text">Khi gặp người giỏi hơn, mình bày tỏ sự ngưỡng mộ. Khi thấy ai đó cần giúp đỡ, mình luôn sẵn lòng hỗ trợ. Mình cũng xây dựng được công việc và cửa hàng riêng nhờ những mối quan hệ đó.</p>
+
+    <p class="body-text">Nhưng <strong>càng được yêu quý, mình càng thấy áp lực.</strong></p>
+
+    <p class="body-text">Sau những cuộc trò chuyện, mình chỉ muốn ở một mình để lấy lại năng lượng. Mình cười nói rất nhiều nhưng bên trong không thực sự thoải mái. Dù mọi thứ có vẻ vẫn ổn, mình luôn cảm thấy <strong>có một khoảng cách rất khó gọi tên giữa bản thân và mọi người.</strong></p>
+
+    <p class="body-text">Nếu ai đó muốn kết nối sâu hơn, mình thường lùi lại.</p>
+
+    <p class="body-text">Cho đến khi mình bắt đầu cáu gắt với cha, cãi nhau với chồng, quát tháo nhân viên và nhận ra bản thân đã kiệt sức.</p>
+
+    <p class="body-text">Lúc đó, mình chỉ muốn ngắt kết nối với tất cả.</p>
+
+    <p class="twist">...<br>Hóa ra <em>mình đã nhầm.</em></p>
+
+    <div class="closing">
+      <p>Mình không giỏi kết nối như mình từng nghĩ.</p>
+      <p>Mình chỉ giỏi làm cho người khác cảm thấy dễ chịu... cho đến khi bản thân không chịu nổi.</p>
+    </div>
+
+  </div>
+
+  <!-- CỘT PHẢI — ảnh + chào -->
+  <div class="right-col">
+    <div class="avatar">D</div>
+    <p class="greeting">Chào bạn! Mình là Dung.</p>
+  </div>
+
+</section>
+</div>
+
+<!-- ===== S3 — Story (section3_story_v4.html) ===== -->
+<div id="s3">
+<article class="section">
+
+  <h2 class="headline">Đó là lúc mình bắt đầu đi tìm câu trả lời</h2>
+
+  <p class="body-text">Mình học về phát triển bản thân, giao tiếp và chữa lành.</p>
+  <p class="body-text">Mình quyết tâm đổi công việc, đổi môi trường làm việc.</p>
+  <p class="body-text">Mỗi lần cố gắng điều gì đó, mình đều nghĩ:<br><em>"Lần này chắc mình sẽ khác."</em></p>
+  <p class="body-text">Nhưng rồi cứ bước vào những tình huống tương tự, mình lại phản ứng y như cũ.</p>
+
+  <p class="body-text">Cho đến khi mình nhận ra một điều bất ngờ:</p>
+
+  <p class="insight">Có những cách hành xử đã lặp đi lặp lại quá lâu đến mức mình tưởng đó là tính cách của mình.</p>
+
+  <ul class="bullets">
+    <li>Mình thường để ý thái độ của người đối diện trước khi quyết định mình nên nói gì hoặc làm gì.</li>
+    <li>Có rất nhiều lần mình đồng ý một điều nhưng thật ra bên trong không hề muốn.</li>
+    <li>Khi ở lại một mình, mình cứ nghĩ mãi về chuyện đã qua: <em>"Có phải mình vừa nói gì sai không?" "Liệu họ có đang khó chịu với mình?" "Lẽ ra mình nên làm khác đi."</em></li>
+  </ul>
+
+  <p class="body-text">Thì ra, <strong>đó chỉ là cách mình học được để giữ kết nối, tránh bị từ chối hoặc không làm người khác thất vọng.</strong></p>
+
+  <div class="transition-line">Khi mình bắt đầu một cách kết nối khác.</div>
+
+  <p class="body-text">Mình không còn cố gắng trở thành người dễ chịu trong mọi tình huống.</p>
+  <p class="body-text">Không còn liên tục quan sát thái độ của người khác rồi mới quyết định mình nên làm gì.</p>
+  <p class="body-text">Mình bắt đầu nói lên suy nghĩ của mình nhiều hơn, đặt ra ranh giới khi cần và thành thật hơn với cảm xúc của chính mình.</p>
+
+  <p class="body-text">Điều khiến mình bất ngờ là:</p>
+  <p class="body-text">Mọi người không hề xa cách như mình từng lo sợ.</p>
+  <p class="body-text">Ngược lại, các cuộc trò chuyện trở nên sâu hơn, thoải mái hơn và thật hơn rất nhiều.</p>
+  <p class="body-text">Mình cũng không còn kiệt sức sau những cuộc gặp gỡ bình thường như trước.</p>
+  <p class="body-text">Và có một điều thú vị xảy ra:</p>
+
+  <p class="big-quote">Khi mình không còn cố trở thành một phiên bản dễ mến hơn, mình lại hiện diện chân thật hơn, tự nhiên hơn và có sức hút hơn trong mắt người khác.</p>
+
+  <div class="divider"></div>
+
+  <p class="body-text">Đó cũng là lý do <strong><em>The Inner Shift</em></strong> ra đời.</p>
+  <p class="body-text">Mình muốn chia sẻ với bạn điều mà mình đã mất rất nhiều năm mới nhận ra:</p>
+  <p class="body-text">Chúng ta không cần trở thành một phiên bản khác để có những mối quan hệ chất lượng hơn.</p>
+  <p class="body-text">Điều cần nhất là <em class="accent-italic">trở lại với sự chân thật và tự nhiên vốn có</em> bên trong mình.</p>
+
+</article>
+</div>
+
+<!-- ===== S4 — Future Vision (section4_future_v3_1.html) ===== -->
+<div id="s4">
+<article class="section">
+
+  <h2 class="headline"><strong class="bold-plain">Nếu một ngày bạn <strong class="bold-accent">không còn phải gồng lên</strong> để giữ kết nối thì sao?</strong></h2>
+
+  <!-- Đoạn 1 -->
+  <p class="body-text">Bạn bước vào một cuộc trò chuyện mà không còn áp lực phải là người dễ chịu.</p>
+  <p class="body-text">Không còn phải nuốt lại điều bạn muốn nói chỉ để mọi thứ êm đẹp.</p>
+  <p class="body-text">Không còn căng lên chỉ vì ai đó thay đổi sắc mặt.</p>
+  <p class="body-text">Lần đầu tiên sau rất nhiều năm, <em class="accent-em">sự chú ý của bạn không còn hướng ra ngoài mà ở lại với chính mình,</em> ngay khi cuộc trò chuyện đang diễn ra.</p>
+  <p class="body-text"><strong class="bold-plain">Bạn lắng nghe vì muốn lắng nghe.</strong></p>
+  <p class="body-text"><strong class="bold-plain">Chia sẻ vì thật sự muốn chia sẻ.</strong></p>
+  <p class="body-text"><strong class="bold-plain">Cười khi thấy vui và im lặng khi không có gì để nói.</strong></p>
+  <p class="body-text">Mọi thứ chỉ diễn ra tự nhiên như vậy.</p>
+
+  <div class="breath"></div>
+
+  <!-- Đoạn 2 -->
+  <p class="body-text">Có thể bạn vẫn sẽ có những lúc lo lắng hay khó chịu.</p>
+  <p class="body-text">Vẫn có những cuộc trò chuyện khó khăn.</p>
+  <p class="body-text">Vẫn có những người không đồng ý với bạn.</p>
+  <p class="body-text">Nhưng những điều đó không còn khiến bạn phải tự điều chỉnh mình để phù hợp.</p>
+  <p class="body-text">Dần dần, bạn bắt đầu được yêu quý và thấu hiểu mà không cần trở thành một người khác.</p>
+
+  <p class="pivot">Khi những phản ứng cũ không còn tự động kéo bạn đi như trước, một cách kết nối mới bắt đầu xuất hiện. Mình gọi những dịch chuyển đó là <em>Inner Shift.</em></p>
+
+</article>
+</div>
+
+<div class="s4-s5-divider-wrap">
+  <div class="s4-s5-divider"></div>
+</div>
+
+<!-- ===== S5 — Mechanism / 3 Tang (section5_final_v3.html) ===== -->
+<div id="s5">
+<section class="section">
+
+  <h2 class="headline">Vì sao The Inner Shift lại hiệu quả?</h2>
+
+  <p class="intro-text">Mình không phải chuyên gia tâm lý hay các mối quan hệ.</p>
+  <p class="intro-text">The Inner Shift được xây dựng từ những điều mình đã mất rất nhiều năm để nhìn ra và thay đổi trong chính cuộc sống của mình.</p>
+  <p class="intro-text">Và điều quan trọng nhất mình nhận ra là: sự thay đổi bền vững không đến từ việc cố sửa hành vi bên ngoài.</p>
+  <p class="intro-text">Nó thường diễn ra qua <strong style="color:#B8724F;">3 tầng chuyển hóa:</strong> nhìn ra điều đang điều khiển mình, tạo ra những dịch chuyển mới trong đời sống hằng ngày và dần xây dựng một cách kết nối khác.</p>
+  <p class="intro-text">Đó cũng là lý do The Inner Shift không chỉ xử lý những gì đang xảy ra trên bề mặt, mà đi vào những điều đang tạo ra chúng từ bên dưới.</p>
+
+  <div class="cards-col">
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-header-label">Tầng 1</span>
+        <p class="card-header-title">Nhìn ra mô thức phản ứng đang điều khiển mình</p>
+      </div>
+      <div class="card-body">
+        <p>Có những cách hành xử đã lặp đi lặp lại quá lâu đến mức chúng ta tưởng đó là tính cách của mình.</p>
+        <p>Nhưng nếu nhìn kỹ hơn, có thể bạn sẽ thấy mình đang lặp lại những phản ứng rất quen thuộc như:</p>
+        <ul>
+          <li>Tự động im lặng khi cảm thấy không được đồng tình</li>
+          <li>Lập tức giải thích rất nhiều khi thấy đối phương lạnh nhạt</li>
+          <li>Cố giữ cho mọi thứ hài hòa nhưng khi được hỏi lại không biết mình thật sự muốn gì</li>
+        </ul>
+        <p>Những phản ứng này không bắt đầu từ suy nghĩ. Cơ thể căng lên trước, rồi cảm xúc, suy nghĩ và hành động mới xuất hiện sau đó.</p>
+        <p>Mọi thứ ra nhanh chóng trước khi bạn kịp nhận ra mình đang làm gì. Chúng đã quá quen nên bạn tin rằng bản thân là người nhạy cảm, lo nghĩ nhiều hoặc không giỏi kết nối.</p>
+        <p>Nhưng trong The Inner Shift, mình gọi những phản ứng lặp đi lặp lại này là <strong>Mô thức</strong>.</p>
+        <p>Nếu không nhìn thấy chúng đang điều khiển mình như thế nào, bạn sẽ dành rất nhiều thời gian để cố thay đổi bản thân, trong khi thứ đang tạo ra vấn đề vẫn chưa được nhìn thấy.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-header-label">Tầng 2</span>
+        <p class="card-header-title">Tạo ra "Inner Shift" ngay trong cuộc sống</p>
+      </div>
+      <div class="card-body">
+        <p>Đây là tầng mà phần lớn mọi người mắc kẹt.</p>
+        <p>Có nhiều người đọc sách, học chữa lành và hiểu bản thân khá rõ. Nhưng khi bố mẹ, người thân hay bạn đời lặp lại những hành vi quen thuộc, họ vẫn phản ứng như cũ.</p>
+        <p>Hiểu ra vấn đề không đồng nghĩa với việc có thể phản ứng khác đi.</p>
+        <p>Vì những phản ứng hiện tại được hình thành từ trải nghiệm, không phải từ nhận thức.</p>
+        <p>Để phản ứng khác đi, <strong><em>cơ thể cần một trải nghiệm đủ thật</em></strong> để nhận ra:</p>
+        <p>"Mình không cần phản ứng như cũ mà kết nối vẫn còn đó."</p>
+        <p>Và quan trọng hơn, điều đó không nhất thiết phải bắt đầu từ những thay đổi lớn.</p>
+        <p>Thực tế, những dịch chuyển quan trọng nhất thường bắt đầu từ những <strong><em>khoảnh khắc rất nhỏ</em></strong> như:</p>
+        <ul>
+          <li>Dừng lại vài giây trước khi nhắn thêm một đoạn dài chỉ vì sợ người khác hiểu lầm</li>
+          <li>Giữ nguyên ý kiến của mình thay vì thay đổi ngay theo phản ứng của người đối diện</li>
+          <li>Nhận ra mình đang khó chịu nhưng không lập tức hành động theo cảm xúc đó</li>
+        </ul>
+        <p>Nhìn từ bên ngoài, gần như không có gì lớn xảy ra.</p>
+        <p>Nhưng bên trong, một trải nghiệm hoàn toàn mới đang được tạo ra.</p>
+        <p>Đó là lý do The Inner Shift không dừng lại ở việc giúp bạn hiểu bản thân.</p>
+        <p>Nó giúp bạn tạo ra những <strong><em>Inner Shift ngay trong những tình huống thật</em></strong> với cha mẹ, bạn bè, người thân hay đồng nghiệp.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-header-label">Tầng 3</span>
+        <p class="card-header-title">Xây dựng một cách kết nối mới</p>
+      </div>
+      <div class="card-body">
+        <p>Nhiều người nghĩ rằng để có những mối quan hệ tốt hơn, mình cần giao tiếp khéo hơn, tự tin hơn hoặc trở thành một phiên bản tốt hơn của chính mình.</p>
+        <p>Nhưng nếu:</p>
+        <ul>
+          <li>Lúc nào cũng sợ làm người khác thất vọng, bạn có dám nói ra điều mình nghĩ?</li>
+          <li>Luôn sợ mất kết nối, bạn sẽ bày tỏ sự bất đồng hay dễ chiều theo đối phương?</li>
+          <li>Luôn cố trở thành người mạnh mẽ, hiểu chuyện, bạn có để người khác thấy những phần yếu đuối của mình?</li>
+        </ul>
+        <p>Thay đổi chất lượng của một mối quan hệ thường không bắt đầu từ kỹ năng.</p>
+        <p>Nó bắt đầu từ <strong>cách bạn bước vào mối quan hệ</strong> đó.</p>
+        <p>Khi đi qua hai tầng chuyển hóa đầu tiên, bạn bắt đầu nhìn thấy sâu hơn những gì đang ảnh hưởng đến cách mình kết nối: không chỉ là những phản ứng lặp lại, mà còn là những <strong><em>nỗi sợ và vai trò</em></strong> đã đi cùng mình trong nhiều năm.</p>
+        <p>Lúc đó, bạn hiểu rằng một mối quan hệ lành mạnh không cần được giữ bằng sự gồng gánh, chiều theo hay liên tục kiểm soát cảm xúc của người khác.</p>
+        <p>Bạn vẫn có những nỗi sợ, những lo lắng và những phần chưa hoàn hảo của mình.</p>
+        <p>Bạn vẫn có những lúc bất đồng, hiểu lầm hoặc khó chịu.</p>
+        <p>Thay vì để bản thân cảm thấy như đang quay lại vạch xuất phát, The Inner Shift giúp bạn <strong><em>hiện diện chân thật hơn</em></strong>, và cho phép <strong><em>người khác hiểu bạn thêm</em></strong> một chút.</p>
+        <p>Vì thế, mối quan hệ được xây trên sự rõ ràng, chân thành và khả năng hiểu nhau sâu hơn.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ===== S6 — Lien he doi tuong (section6_lienhe_v1.html) ===== -->
+<div id="s6">
+<section class="section">
+
+  <h2 class="headline">Nếu bạn thấy mình ở đâu đó trong những điều này...</h2>
+
+  <ul class="checklist">
+    <li>Thường xuyên cảm thấy mệt sau những cuộc trò chuyện hoặc trong các mối quan hệ thân thiết, nhưng không hiểu rõ vì sao.</li>
+    <li>Luôn cố giữ mọi thứ ổn thỏa, nhưng càng ngày càng thấy áp lực và mất tự nhiên khi ở cạnh người khác.</li>
+    <li>Hay suy nghĩ lại những cuộc trò chuyện đã qua, tự hỏi liệu mình có nói gì sai hay làm ai đó khó chịu không.</li>
+    <li>Nhìn ra khá rõ những cách mình thường phản ứng trong các mối quan hệ, nhưng không biết nên bắt đầu thay đổi từ đâu.</li>
+    <li>Có những thay đổi tích cực, nhưng mỗi lần quay về phản ứng cũ lại cảm thấy như mình đang quay lại vạch xuất phát.</li>
+    <li>Muốn thay đổi cách mình kết nối với người khác, nhưng chưa tìm được một cách đủ an toàn để thực hành trong đời sống thật.</li>
+  </ul>
+
+  <p class="closing-intro">… mình hiểu cảm giác của bạn.</p>
+
+  <p class="body-text">Vì mình cũng từng ở đó.</p>
+  <p class="body-text">Sau rất nhiều lần thử rồi lại quay về những phản ứng quen thuộc, mình nhận ra:</p>
+  <p class="body-text"><strong>Điều còn thiếu thường không phải là thêm kiến thức hay thêm nỗ lực.</strong></p>
+  <p class="body-text">Điều mình thực sự cần lúc đó là một lộ trình đủ rõ để biết mình đang ở đâu và điều gì cần được dịch chuyển trước.</p>
+  <p class="body-text">Là những công cụ giúp mình nhìn thấy các mô thức phản ứng ngay trong đời sống hằng ngày.</p>
+  <p class="body-text">Và một môi trường đủ an toàn để thử những cách phản ứng mới khi chúng xuất hiện.</p>
+
+</section>
+</div>
+
+<!-- ===== S7 — Gioi thieu 12 ngay (section7_v5.html) ===== -->
+<div id="s7">
+<section class="s7">
+  <div class="s7-inner">
+
+    <!-- ── INTRO ── -->
+    <div class="s7-eyebrow">Lộ trình học</div>
+    <h2 class="s7-headline">Giới thiệu The Inner Shift<span class="s7-headline-sub">Hành trình 12 ngày chuyển hóa</span></h2>
+    <p class="s7-body">The Inner Shift không phải là một khóa học, mà là một hành trình thực hành trong 12 ngày.</p>
+    <p class="s7-body">Bạn nhận ra điều gì đang khiến mình mắc kẹt trong các mối quan hệ và dần hiện diện tự nhiên hơn, ngay cả khi những người xung quanh vẫn như cũ.</p>
+
+    <!-- ── BORDERED LIST ── -->
+    <div class="s7-listbox">
+      <div class="s7-listbox-label">Trong 12 ngày, bạn sẽ đi qua</div>
+      <ul>
+        <li>Nhìn rõ những phản ứng quen thuộc đang lặp lại trong các mối quan hệ.</li>
+        <li>Nhận ra điều gì đang xảy ra bên trong mình ngay khi nó xuất hiện.</li>
+        <li>Tạo được khoảng dừng trước những phản ứng theo quán tính.</li>
+        <li>Giảm replay, overthinking và tự trách sau các cuộc trò chuyện.</li>
+        <li>Bày tỏ bản thân rõ ràng hơn mà không cần trở thành một người khác.</li>
+        <li>Bắt đầu trải nghiệm một kiểu kết nối chân thật và thoải mái hơn.</li>
+      </ul>
+    </div>
+
+    <div class="s7-divider"><div class="s7-divider-dot"></div></div>
+
+    <!-- ── LỘ TRÌNH INTRO ── -->
+    <div class="s7-ldt-eyebrow">Lộ trình 12 ngày</div>
+    <div class="s7-ldt-headline">The Inner Shift được thiết kế thành hành trình 12 ngày với 4 giai đoạn rõ ràng.</div>
+    <p class="s7-ldt-body">Mỗi ngày, bạn sẽ hiểu thêm một lớp bên dưới những phản ứng quen thuộc của mình, đồng thời tạo ra những dịch chuyển nhỏ nhưng thật ngay trong các mối quan hệ hằng ngày.</p>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- GIAI ĐOẠN 1 -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-pill">Giai đoạn 1</div>
+        <div class="phase-meta">
+          <div class="phase-title">Bắt đầu nhìn thấy chính mình</div>
+          <div class="phase-days">Ngày 1 – 3</div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">1</div>
+          <div class="day-thumb-label">Ngày 1</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 1</div>
+          <div class="day-title">Vì sao bạn không thoải mái khi kết nối</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ chỉ cho bạn những dấu hiệu cho thấy bạn đang dần mất tự nhiên khi kết nối.</li>
+            <li>Bạn bắt đầu thấy ra điều gì đang thực sự diễn ra bên trong mình.</li>
+            <li>Workbook & câu hỏi: Bài quan sát những tình huống khiến bạn đánh mất chính mình.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">2</div>
+          <div class="day-thumb-label">Ngày 2</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 2</div>
+          <div class="day-title">Điều gì đang diễn ra dưới mỗi phản ứng</div>
+          <ul class="day-bullets">
+            <li>Mình hướng dẫn bạn framework cốt lõi của The Inner Shift, để thấy một phản ứng hình thành và lặp lại như thế nào.</li>
+            <li>Bạn có được một bản đồ rõ ràng để hiểu điều gì đang điều khiển mình.</li>
+            <li>Workbook & câu hỏi: Phân tích một tình huống thật của chính bạn.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">3</div>
+          <div class="day-thumb-label">Ngày 3</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 3</div>
+          <div class="day-title">Phiên bản mình đã phải trở thành để được yêu quý</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ cùng bạn khám phá những vai trò bạn thường mang vào các mối quan hệ.</li>
+            <li>Bạn thấy ra những lúc mình đang cố trở thành ai đó để được chấp nhận.</li>
+            <li>Workbook & câu hỏi: Bộ câu hỏi giúp nhận diện những vai trò quen thuộc.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="phase-sep">
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- GIAI ĐOẠN 2 -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-pill">Giai đoạn 2</div>
+        <div class="phase-meta">
+          <div class="phase-title">Đi sâu vào những mô thức đang điều khiển mình</div>
+          <div class="phase-days">Ngày 4 – 6</div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">4</div>
+          <div class="day-thumb-label">Ngày 4</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 4</div>
+          <div class="day-title">Đọc những tín hiệu từ cơ thể</div>
+          <ul class="day-bullets">
+            <li>Bạn sẽ học cách nhận ra những tín hiệu cơ thể xuất hiện trước phản ứng quen thuộc.</li>
+            <li>Bạn bắt đầu nhận ra khi nào mình đang bị kích hoạt.</li>
+            <li>Workbook & câu hỏi: Body Activation Map và bài quan sát cơ thể.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">5</div>
+          <div class="day-thumb-label">Ngày 5</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 5</div>
+          <div class="day-title">Nhìn thấy điều mình đang thật sự sợ</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ cùng bạn khám phá những nỗi sợ phía dưới việc chiều lòng, né tránh hay giận dữ.</li>
+            <li>Bạn hiểu ở tầng sâu hơn những gì khiến mình phản ứng mạnh trong những tình huống quen thuộc.</li>
+            <li>Workbook & câu hỏi: Bộ câu hỏi giúp nhận diện nỗi sợ và trigger của bạn.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">6</div>
+          <div class="day-thumb-label">Ngày 6</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 6</div>
+          <div class="day-title">Điều bạn đang mất đi mỗi khi cố giữ mọi thứ yên ổn</div>
+          <ul class="day-bullets">
+            <li>Bạn sẽ nhìn lại những điều mình đã âm thầm đánh đổi để giữ kết nối.</li>
+            <li>Bạn nhận ra những lúc mình bỏ qua cảm xúc và nhu cầu thật của mình.</li>
+            <li>Workbook & câu hỏi: Bài phản tư về những đánh đổi trong các mối quan hệ.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="phase-sep">
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- GIAI ĐOẠN 3 -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-pill">Giai đoạn 3</div>
+        <div class="phase-meta">
+          <div class="phase-title">Tạo ra những shift đầu tiên trong đời thật</div>
+          <div class="phase-days">Ngày 7 – 9</div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">7</div>
+          <div class="day-thumb-label">Ngày 7</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 7</div>
+          <div class="day-title">Khoảnh khắc bạn có thể chọn khác đi</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ chỉ cho bạn cách tạo khoảng dừng giữa cảm xúc và hành động.</li>
+            <li>Bạn bắt đầu nhận ra phản ứng của mình sớm hơn trước.</li>
+            <li>Workbook & câu hỏi: Bài thực hành tạo khoảng dừng trong đời sống hằng ngày.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">8</div>
+          <div class="day-thumb-label">Ngày 8</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 8</div>
+          <div class="day-title">Thiết kế và áp dụng những shift đầu tiên</div>
+          <ul class="day-bullets">
+            <li>Bạn học cách thiết kế những thay đổi đủ nhỏ để bắt đầu áp dụng trong các cuộc trò chuyện quen thuộc.</li>
+            <li>Bạn trải nghiệm cảm giác chân thật và thoải mái hơn khi kết nối.</li>
+            <li>Workbook & câu hỏi: Bài tập ứng dụng vào các tình huống giao tiếp thực tế.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">9</div>
+          <div class="day-thumb-label">Ngày 9</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 9</div>
+          <div class="day-title">Xây dựng self-trust trong những khoảnh khắc không thoải mái</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ cùng bạn tập ở lại với chính mình ngay cả khi mọi thứ không như mong đợi.</li>
+            <li>Bạn dần có được niềm tin rằng mình vẫn ổn ngay cả khi không hoàn hảo.</li>
+            <li>Workbook & câu hỏi: Bài thực hành điều chỉnh cảm xúc và xây dựng self-trust.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr class="phase-sep">
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- GIAI ĐOẠN 4 -->
+    <!-- ══════════════════════════════════════ -->
+    <div class="phase">
+      <div class="phase-header">
+        <div class="phase-pill">Giai đoạn 4</div>
+        <div class="phase-meta">
+          <div class="phase-title">Xây dựng một cách kết nối mới</div>
+          <div class="phase-days">Ngày 10 – 12</div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">10</div>
+          <div class="day-thumb-label">Ngày 10</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 10</div>
+          <div class="day-title">Checklist lại toàn bộ dịch chuyển</div>
+          <ul class="day-bullets">
+            <li>Bạn sẽ kết nối lại những gì mình đã quan sát và trải nghiệm trong 10 ngày qua.</li>
+            <li>Bạn có được một bức tranh rõ ràng về hành trình thay đổi của mình.</li>
+            <li>Workbook & câu hỏi: Workbook tổng kết toàn bộ quá trình.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">11</div>
+          <div class="day-thumb-label">Ngày 11</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 11</div>
+          <div class="day-title">Cách kết nối mà không phải gồng lên</div>
+          <ul class="day-bullets">
+            <li>Bạn sẽ thực hành hiện diện trong kết nối mà không liên tục điều chỉnh bản thân.</li>
+            <li>Bạn cảm nhận rõ hơn sự thư giãn và chân thật khi ở cùng người khác.</li>
+            <li>Workbook & câu hỏi: Bài tập ứng dụng vào các cuộc trò chuyện thực tế.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="day-thumb">
+          <div class="day-thumb-num">12</div>
+          <div class="day-thumb-label">Ngày 12</div>
+        </div>
+        <div class="day-content">
+          <div class="day-tag">Ngày 12</div>
+          <div class="day-title">Xây dựng lộ trình của riêng bạn</div>
+          <ul class="day-bullets">
+            <li>Mình sẽ cùng bạn nhìn lại những dịch chuyển đã xuất hiện và bước tiếp từ đó.</li>
+            <li>Bạn có được một hướng đi rõ ràng để tiếp tục hành trình của mình.</li>
+            <li>Workbook & câu hỏi: Workbook tổng kết và roadmap cá nhân.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CTA ── -->
+    <div class="s7-cta">
+      <a class="s7-cta-btn tis-cta-trigger" href="#">Đăng ký tham gia hành trình</a>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ===== S8 — Bonus (section8_bonus_v2.html) ===== -->
+<div id="s8">
+<section class="section">
+
+  <div class="intro">
+    <h2 class="intro-headline" style="font-size:40px; color:#B8724F; margin-bottom:12px;">Không chỉ là 12 ngày</h2>
+    <p class="intro-sub">The Inner Shift còn có:</p>
+  </div>
+
+  <div class="bonus-list">
+
+    <!-- Bonus 1 -->
+    <div class="bonus-item">
+      <span class="bonus-tag">Bonus 1</span>
+      <h3 class="bonus-title">Cộng đồng Zalo đồng hành</h3>
+      <p class="bonus-body">Đây là không gian để kết nối với những người cũng đang thực hành The Inner Shift, chia sẻ sự chuyển hóa và học hỏi từ nhau.</p>
+      <p class="bonus-body">Bạn cũng có thể đặt câu hỏi khi gặp khó khăn và nhận hỗ trợ từ Dung và team trong suốt quá trình thực hành.</p>
+    </div>
+
+    <div class="bonus-divider"></div>
+
+    <!-- Bonus 2 -->
+    <div class="bonus-item">
+      <span class="bonus-tag">Bonus 2</span>
+      <h3 class="bonus-title">Workshop định kỳ cùng Dung</h3>
+      <p class="bonus-body">Mỗi 2 tháng sẽ có Workshop online để cùng nhìn lại những tình huống thực tế, giải đáp các câu hỏi và tháo gỡ những điểm đang khiến bạn mắc kẹt trong quá trình thực hành.</p>
+      <p class="bonus-body">Bạn được tham gia miễn phí tất cả các Workshop trong vòng 1 năm kể từ ngày đăng ký.</p>
+    </div>
+
+    <div class="bonus-divider"></div>
+
+    <!-- Bonus 3 -->
+    <div class="bonus-item">
+      <span class="bonus-tag">Bonus 3</span>
+      <h3 class="bonus-title">Truy cập chương trình trong 12 tháng và nhận các cập nhật mới miễn phí</h3>
+      <p class="bonus-body">Bạn có 12 tháng để học, thực hành và quay lại chương trình bất cứ khi nào cần.</p>
+      <p class="bonus-body">Trong thời gian đó, mọi nội dung và cập nhật mới của The Inner Shift đều được mở miễn phí.</p>
+    </div>
+
+  </div>
+
+</section>
+</div>
+
+<!-- ===== S9 — Pricing / CTA (section9_pricing_v5.html) ===== -->
+<div id="s9">
+<section class="section">
+
+  <h2 class="headline">Đến đây, bạn đã có mọi thứ cần thiết<br>để đi trọn hành trình này.</h2>
+
+  <div class="card">
+
+    <p class="card-title">The Inner Shift</p>
+
+    <ul class="checklist">
+      <li>
+        <div class="check-icon">✓</div>
+        <span><span class="check-label">Hành trình thực hành</span> <span class="dot">•</span> 12 ngày video hướng dẫn <span class="dot">•</span> Workbook phản tư <span class="dot">•</span> Bài tập ứng dụng trong đời sống hằng ngày</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span><span class="check-label">Đồng hành & hỗ trợ</span> <span class="dot">•</span> Cộng đồng Zalo <span class="dot">•</span> Workshop định kỳ cùng Dung <span class="dot">•</span> Q&A và hỗ trợ trong quá trình thực hành</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span><span class="check-label">Truy cập dài hạn</span> <span class="dot">•</span> Truy cập chương trình trong 12 tháng <span class="dot">•</span> Mọi cập nhật mới đều được mở miễn phí</span>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <span><span class="check-label">Điều quan trọng nhất</span> <span class="dot">•</span> Bạn có một lộ trình rõ ràng để biết mình đang mắc ở đâu và cần bắt đầu từ đâu để thay đổi</span>
+      </li>
+    </ul>
+
+    <div class="pricing-block">
+      <p class="price-original"><s><strong>Giá chính thức: 1.200.000đ</strong></s></p>
+      <p class="price-label">Ưu đãi mở bán</p>
+      <p class="price-main">590.000đ</p>
+      <div class="price-divider"></div>
+      <p class="price-note">Không chỉ là 12 ngày.</p>
+      <p class="price-note" style="font-size:11px;"><em>Mà là <strong style="font-style:italic;">lộ trình rõ ràng để bạn thật sự thay đổi</strong> cách kết nối với người khác.</em></p>
+    </div>
+
+    <button class="cta-btn tis-cta-trigger">Đăng ký tham gia hành trình</button>
+    <p class="refund">Cam kết hoàn tiền 100% trong 30 ngày</p>
+
+  </div>
+
+</section>
+</div>
+
+<!-- ===== S10 — Why Price (section10_why_price.html) ===== -->
+<div id="s10">
+<section class="section">
+
+  <h2 class="headline">Vì sao có mức giá ưu đãi này?</h2>
+
+  <p class="body-text">Đây là mức giá dành cho những bạn tham gia The Inner Shift từ giai đoạn đầu tiên.</p>
+  <p class="body-text">Ở giai đoạn này, bạn sẽ là một phần của cộng đồng đầu tiên, khi mọi thứ vẫn còn đủ nhỏ và đủ gần để những chia sẻ, trải nghiệm và câu hỏi trên hành trình được trao đổi cởi mở hơn.</p>
+  <p class="body-note">Khi nội dung, workshop và hệ thống đồng hành tiếp tục được mở rộng, mức học phí sẽ được điều chỉnh tương ứng.</p>
+
+  <div class="card">
+    <p class="price-original">Giá chính thức: 1.200.000đ</p>
+    <p class="price-label">Ưu đãi mở bán</p>
+    <p class="price-main">590.000đ</p>
+    <div class="card-divider"></div>
+    <button class="cta-btn tis-cta-trigger">Đăng ký tham gia hành trình</button>
+    <p class="refund">Cam kết hoàn tiền 100% trong 30 ngày</p>
+  </div>
+
+</section>
+</div>
+
+<!-- ===== S11 — Cam ket hoan tien (section11_guarantee_v2.html) ===== -->
+<div id="s11">
+<section class="section">
+
+  <p class="eyebrow">Cam kết hoàn tiền</p>
+
+  <div class="seal-wrap">
+    <div class="seal">
+      <span class="seal-num">30</span>
+      <span class="seal-text">ngày</span>
+    </div>
+  </div>
+
+  <h2 class="headline">
+    Nếu không có gì dịch chuyển,<br>
+    <em>bạn không mất gì cả.</em>
+  </h2>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <p class="body-text">The Inner Shift không phải thứ bạn đọc xong rồi để đó.<br>
+  Nó được thiết kế để <strong>thực sự thay đổi cách bạn phản ứng</strong> trong các mối quan hệ — không phải trên lý thuyết, mà trong đời thật.</p>
+
+  <p class="body-text">Vì vậy, nếu sau khi nghiêm túc thực hành, bạn vẫn cảm thấy chương trình không phù hợp hoặc không mang lại giá trị, bạn có thể yêu cầu hoàn tiền trong vòng 30 ngày.</p>
+
+  <p class="body-text">Để cam kết này có ý nghĩa với cả hai bên, mình mong bạn đã:</p>
+
+  <ul class="conditions-list">
+    <li><span class="bullet">•</span><span>Hoàn thành ít nhất 10/12 ngày thực hành</span></li>
+    <li><span class="bullet">•</span><span>Điền đầy đủ workbook đi kèm</span></li>
+    <li><span class="bullet">•</span><span>Áp dụng vào ít nhất 3 tình huống thực tế trong cuộc sống</span></li>
+    <li><span class="bullet">•</span><span>Tham gia cộng đồng Telegram và đặt câu hỏi khi cần</span></li>
+  </ul>
+
+  <div class="note">
+    <p class="note-text">Sau đó, nếu bạn vẫn muốn hoàn tiền, chỉ cần gửi email cho mình với tiêu đề: <strong>"Yêu cầu hoàn tiền"</strong>.</p>
+    <p class="note-text" style="margin-top:10px;">Mình sẽ hoàn lại toàn bộ học phí cho bạn.</p>
+    <p class="note-text" style="margin-top:10px;font-style:italic;">Bạn vẫn được giữ toàn bộ tài liệu, workbook và video đã nhận như một lời cảm ơn vì đã dành thời gian trải nghiệm chương trình.</p>
+  </div>
+
+  <div class="cta-wrap">
+    <button class="cta-btn tis-cta-trigger">Đăng ký tham gia hành trình</button>
+    <p class="cta-note">Cam kết hoàn tiền 100% trong vòng 30 ngày</p>
+  </div>
+
+</section>
+</div>
+
+<!-- ===== S12 — FAQ (section12_faq_v2_2.html) ===== -->
+<div id="s12">
+<section class="section">
+
+  <h2 class="headline">Câu hỏi thường gặp</h2>
+
+  <ul class="faq-list">
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">01.</span>
+        <span class="faq-question">Tôi đã học nhiều khóa về self-help hoặc chữa lành rồi. The Inner Shift có gì khác?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>The Inner Shift không tập trung vào việc giúp bạn hiểu thêm về bản thân.</p>
+          <p>Chương trình được thiết kế để bạn thực hành trong những tình huống thật, nơi bạn thường overthinking, chiều lòng, im lặng hoặc mất tự nhiên trong các mối quan hệ.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">02.</span>
+        <span class="faq-question">Những thay đổi nhỏ như vậy có thực sự tạo ra khác biệt không?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Có. Phần lớn những thay đổi quan trọng trong các mối quan hệ không bắt đầu từ một quyết định lớn.</p>
+          <p>Chúng bắt đầu từ những khoảnh khắc rất nhỏ: khi bạn không còn phản ứng y như cũ trong một cuộc trò chuyện quen thuộc. Đó cũng là điều The Inner Shift giúp bạn thực hành trong 12 ngày này.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">03.</span>
+        <span class="faq-question">Tôi khá bận. Mỗi ngày cần bao nhiêu thời gian?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>The Inner Shift không đòi hỏi bạn phải học thêm quá nhiều kiến thức.</p>
+          <p>Bạn chỉ cần khoảng 15–30 phút mỗi ngày để xem video.</p>
+          <p>Điều quan trọng không phải là học thêm thật nhiều, mà là thử mang nó vào những tình huống quen thuộc hằng ngày.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">04.</span>
+        <span class="faq-question">12 ngày có đủ để thay đổi thật sự không?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>12 ngày không thay đổi toàn bộ cuộc đời bạn.</p>
+          <p>Nhưng 12 ngày đủ để bạn nhìn rõ mô thức phản ứng của mình, tạo ra những Inner Shift đầu tiên và biết mình cần tiếp tục đi đâu sau đó.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">05.</span>
+        <span class="faq-question">Nếu tôi tham gia nhưng vẫn không thay đổi thì sao?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>The Inner Shift không tạo ra thay đổi chỉ bằng việc xem nội dung.</p>
+          <p>Nhưng nếu bạn đã hoàn thành các bài thực hành chính, áp dụng vào những tình huống thực tế và vẫn cảm thấy chương trình không giúp bạn hiểu mình rõ hơn hoặc tạo ra bất kỳ Inner Shift nào, mình sẽ hoàn tiền đúng theo cam kết hoàn tiền 30 ngày ở trên.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">06.</span>
+        <span class="faq-question">Dung có bằng cấp về coaching hoặc tâm lý học không?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Mình không có bằng về coaching hay tâm lý học.</p>
+          <p>The Inner Shift được xây dựng từ quá trình học tập, thực hành và trải nghiệm thực tế của chính mình trong suốt nhiều năm.</p>
+          <p>Đây không phải là một chương trình học thuật. Đây là những điều đã thực sự giúp mình thay đổi cách kết nối và xây dựng những mối quan hệ chất lượng hơn mà không phải gồng mình.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">07.</span>
+        <span class="faq-question">Chương trình này có thay thế therapy hoặc trị liệu tâm lý không?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Không.</p>
+          <p>The Inner Shift không thay thế therapy hay các hỗ trợ sức khỏe tâm thần chuyên sâu.</p>
+          <p>Đây là chương trình giúp bạn hiểu rõ hơn mô thức phản ứng và cách mình hiện diện trong các mối quan hệ hằng ngày.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="faq-item">
+      <button class="faq-trigger" onclick="toggle(this)">
+        <span class="faq-num">08.</span>
+        <span class="faq-question">Nếu sau 12 ngày tôi muốn đi sâu hơn thì sao?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>12 ngày là điểm bắt đầu, không phải điểm kết thúc.</p>
+          <p>Sau chương trình, bạn sẽ hiểu rõ mình đang ở đâu trong hành trình và có nền tảng để tiếp tục đi sâu hơn theo cách phù hợp với mình.</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+</section>
+</div>
+
+<!-- ===== S13 — Closing (section13_closing_v2.html) ===== -->
+<div id="s13">
+<div class="top">
+  <div class="top-inner">
+    <h2 class="headline">Đến đây, có thể bạn đang đứng trước<br>hai hướng đi.</h2>
+    <p class="body-text">Tiếp tục hiểu thêm.</p>
+    <p class="body-text">Nhưng vài tháng nữa, bạn vẫn tự hỏi:</p>
+    <div class="pivot">
+      <p>"Mình biết điều này rồi.<br>Vậy tại sao mình vẫn phản ứng như cũ?"</p>
+    </div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+    <p class="h2-title">Bắt đầu hành trình.</p>
+    <p class="h2-body">Không phải để trở thành một người khác.</p>
+    <p class="h2-body">Mà để được yêu quý và thấu hiểu từ chính con người thật của mình.</p>
+  </div>
+</div>
+
+<div class="bottom">
+  <div class="bottom-inner">
+    <p class="decision">Nếu bạn cảm thấy đã đến lúc thực hành những điều mình biết.</p>
+    <p class="decision-sub">The Inner Shift là nơi để bắt đầu.</p>
+    <div class="bottom-divider">
+      <div class="bottom-divider-line"></div>
+      <div class="bottom-divider-dot"></div>
+      <div class="bottom-divider-line"></div>
+    </div>
+    <p class="price-label">Ưu đãi mở bán</p>
+    <p class="price">590.000đ</p>
+    <button class="cta tis-cta-trigger">Đăng ký tham gia hành trình</button>
+    <span class="cta-note">Cam kết hoàn tiền 100% trong vòng 30 ngày</span>
+  </div>
+</div>
+</div>
+
+<!-- ===================================================== -->
+<!-- MODAL ĐĂNG KÝ — "Thông tin đăng ký"                     -->
+<!-- ===================================================== -->
+<div class="tis-modal-overlay" id="tisModalOverlay">
+  <div class="tis-modal">
+    <button class="tis-modal-close" id="tisModalClose" aria-label="Đóng">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <h2>Thông tin đăng ký</h2>
+
+    <form id="tisRegisterForm" novalidate>
+      <div class="tis-field" id="tisFieldName">
+        <label for="tisFullname">Họ tên của bạn<span class="req">*</span></label>
+        <input type="text" id="tisFullname" name="fullname" placeholder="Nguyễn Thị A" autocomplete="name">
+        <div class="tis-error">Vui lòng nhập họ tên của bạn</div>
+      </div>
+
+      <div class="tis-field" id="tisFieldEmail">
+        <label for="tisEmail">Email của bạn<span class="req">*</span></label>
+        <input type="email" id="tisEmail" name="email" placeholder="ban@email.com" autocomplete="email">
+        <div class="tis-error">Vui lòng nhập email hợp lệ</div>
+      </div>
+
+      <div class="tis-field" id="tisFieldPhone">
+        <label for="tisPhone">Số điện thoại (có Zalo)<span class="req">*</span></label>
+        <input type="tel" id="tisPhone" name="phone" placeholder="09xx xxx xxx" autocomplete="tel">
+        <div class="tis-error">Vui lòng nhập số điện thoại hợp lệ</div>
+        <div class="tis-hint">Dùng để liên hệ xác nhận và gửi link khóa học</div>
+      </div>
+
+      <button type="submit" class="tis-submit" id="tisSubmitBtn">Nhận The Inner Shift ngay</button>
+    </form>
+
+    <div class="tis-trust">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#70715F" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      Thông tin của bạn được bảo mật tuyệt đối
+    </div>
+  </div>
+</div>
+
+
+<script>
+  // ===== S12 — FAQ script =====
+function toggle(btn) {
+    var item = btn.closest('.faq-item');
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('is-open');
+
+    // Đóng tất cả
+    document.querySelectorAll('.faq-item.is-open').forEach(function(el) {
+      el.classList.remove('is-open');
+      el.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+
+    // Mở cái được click nếu chưa mở
+    if (!isOpen) {
+      item.classList.add('is-open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // ===== MODAL ĐĂNG KÝ — "Thông tin đăng ký" =====
+  (function(){
+    const overlay = document.getElementById('tisModalOverlay');
+    const closeBtn = document.getElementById('tisModalClose');
+    const form = document.getElementById('tisRegisterForm');
+    const submitBtn = document.getElementById('tisSubmitBtn');
+
+    // Mở modal khi bấm BẤT KỲ nút có class "tis-cta-trigger"
+    document.querySelectorAll('.tis-cta-trigger').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        overlay.classList.add('open');
+        document.body.classList.add('tis-modal-active');
+      });
+    });
+
+    function closeModal(){
+      overlay.classList.remove('open');
+      document.body.classList.remove('tis-modal-active');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+
+    function setError(fieldId, show){
+      document.getElementById(fieldId).classList.toggle('has-error', show);
+    }
+
+    function validatePhone(value){
+      const cleaned = value.replace(/[\s.()-]/g, '');
+      return /^(0|\+84)\d{9,10}$/.test(cleaned);
+    }
+
+    function validateEmail(value){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const fullname = document.getElementById('tisFullname').value.trim();
+      const email = document.getElementById('tisEmail').value.trim();
+      const phone = document.getElementById('tisPhone').value.trim();
+
+      let valid = true;
+
+      if(fullname.length < 2){ setError('tisFieldName', true); valid = false; } else { setError('tisFieldName', false); }
+      if(!validateEmail(email)){ setError('tisFieldEmail', true); valid = false; } else { setError('tisFieldEmail', false); }
+      if(!validatePhone(phone)){ setError('tisFieldPhone', true); valid = false; } else { setError('tisFieldPhone', false); }
+
+      if(!valid) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Đang xử lý...';
+
+      const registrant = { fullname, email, phone, timestamp: new Date().toISOString() };
+      sessionStorage.setItem('tis_registrant', JSON.stringify(registrant));
+
+      setTimeout(function(){
+        window.location.href = 'payment.html';
+      }, 400);
+    });
+  })();
+
+</script>
+</body>
+</html>

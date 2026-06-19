@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Inner Shift — Xác nhận đơn hàng</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; }
+  body {
+    -webkit-font-smoothing: antialiased;
+    background: #1A120D;
+    font-family: 'Inter', sans-serif;
+  }
+  a { text-decoration: none; color: inherit; }
+  button { font-family: inherit; cursor: pointer; }
+
+  /* ===================== 1. HEADLINE ===================== */
+  .headline-zone {
+    width: 100%;
+    background: #1A120D;
+    padding: 56px 40px 40px;
+  }
+  .headline-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .headline-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #B8724F;
+    margin-bottom: 18px;
+  }
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.32;
+    color: #E7D7CA;
+    max-width: 820px;
+    margin: 0 auto;
+    letter-spacing: -0.005em;
+  }
+  .headline .hl { color: #B8724F; }
+
+  /* ===================== GRID (nền tối, chứa khối 2/3 và 4) ===================== */
+  .main-zone {
+    width: 100%;
+    background: #1A120D;
+    padding: 24px 40px 64px;
+  }
+  .main-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  /* ===================== 2+3. ORDER CARD (sáng) — info + bump + CTA ===================== */
+  .order-card {
+    background: #FAF3EA;
+    border-radius: 16px;
+    padding: 34px;
+  }
+
+  .card-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5C5648;
+    margin-bottom: 16px;
+  }
+
+  /* Thông tin đơn hàng */
+  .order-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+  }
+  .order-line-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    color: #2A221E;
+  }
+  .order-line-name .item-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #70715F;
+    margin-top: 2px;
+  }
+  .order-line-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2A221E;
+    white-space: nowrap;
+  }
+  .order-line.bump-line { display: none; }
+  .order-line.bump-line.is-active { display: flex; }
+
+  .order-divider { height: 1px; background: #E7D7CA; margin: 6px 0; }
+
+  .order-total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 14px;
+  }
+  .order-total-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2A221E;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .order-total-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #B8724F;
+  }
+
+  /* Thông tin khách (auto-fill) */
+  .buyer-info {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #E7D7CA;
+  }
+  .buyer-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+  }
+  .buyer-row-label { color: #5C5648; }
+  .buyer-row-value { color: #2A221E; font-weight: 600; }
+  .buyer-edit-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: #B8724F;
+    text-decoration: underline;
+    margin-top: 12px;
+    display: inline-block;
+  }
+
+  /* Order bump — nổi bật, ngay trên CTA */
+  .bump-block {
+    margin-top: 26px;
+    border: 1.5px solid #B8724F;
+    border-radius: 12px;
+    padding: 20px;
+    background: #FFFFFF;
+  }
+  .bump-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #B8724F;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .bump-item {
+    display: flex;
+    gap: 14px;
+    cursor: pointer;
+  }
+  .bump-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid #C9B29D;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    appearance: none;
+    background: #fff;
+    cursor: pointer;
+  }
+  .bump-checkbox:checked {
+    background: #B8724F;
+    border-color: #B8724F;
+  }
+  .bump-content { flex: 1; }
+  .bump-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .bump-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2A221E;
+  }
+  .bump-price-new { font-family: 'Inter', sans-serif; font-weight: 700; color: #B8724F; font-size: 15px; }
+  .bump-price-old { text-decoration: line-through; color: #A99784; font-size: 12px; margin-right: 6px; }
+  .bump-desc {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    color: #3A2E28;
+    line-height: 1.65;
+    margin-top: 6px;
+  }
+  .bump-todo-tag {
+    display: inline-block;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #B8724F;
+    background: #F3E7DE;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* CTA */
+  .cta-btn {
+    width: 100%;
+    background: #B8724F;
+    color: #FAF3EA;
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-top: 22px;
+  }
+  .cta-note {
+    text-align: center;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #70715F;
+    margin-top: 10px;
+  }
+
+  /* ===================== 4. VALUE BLOCK (nền tối, 1 khối duy nhất) ===================== */
+  .value-block {
+    padding-top: 4px;
+  }
+  .value-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #B8724F;
+    margin-bottom: 14px;
+  }
+  .value-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #E7D7CA;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+  }
+
+  .phase-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 6px; }
+  .phase-item { display: flex; gap: 13px; align-items: flex-start; }
+  .phase-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #B8724F;
+    flex-shrink: 0;
+    width: 26px;
+  }
+  .phase-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #E7D7CA;
+  }
+  .phase-text strong { color: #F3E7DE; font-weight: 600; }
+
+  .value-divider {
+    height: 1px;
+    background: rgba(250, 243, 234, 0.12);
+    margin: 24px 0;
+  }
+
+  .bonus-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #E7D7CA;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .bonus-list-val { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+  .bonus-item-val { display: flex; gap: 11px; }
+  .bonus-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #B8724F;
+    color: #1A120D;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .bonus-text-val {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #E7D7CA;
+  }
+  .bonus-text-val strong { color: #F3E7DE; font-weight: 600; }
+
+  .raise-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #E7D7CA;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .raise-body {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #C9B29D;
+    margin-bottom: 10px;
+  }
+  .raise-body strong { color: #F3E7DE; font-weight: 600; }
+
+  /* ===================== 5. GUARANTEE (nền sáng, full-width, theo cấu trúc S11) ===================== */
+  .guarantee-zone {
+    width: 100%;
+    background: #FAF3EA;
+    padding: 64px 40px 80px;
+  }
+  .guarantee-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    background: #F3E7DE;
+    border-radius: 20px;
+    padding: 56px 56px 48px;
+  }
+  .guarantee-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #B8724F;
+    margin-bottom: 22px;
+  }
+  .seal-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+  .seal {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid #B8724F;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .seal-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #B8724F;
+    line-height: 1;
+  }
+  .seal-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #B8724F;
+  }
+  .guarantee-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #2A221E;
+    margin-bottom: 26px;
+  }
+  .guarantee-headline em { font-style: italic; color: #B8724F; }
+
+  .guarantee-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .guarantee-divider-line { width: 56px; height: 1px; background: #C9B29D; }
+  .guarantee-divider-dot { width: 6px; height: 6px; border-radius: 50%; background: #B8724F; }
+
+  .guarantee-body-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #3A2E28;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .guarantee-body-text strong { font-weight: 600; color: #2A221E; }
+
+  .guarantee-box {
+    border-top: 1px solid #DCC2AC;
+    padding-top: 26px;
+    margin-top: 26px;
+    text-align: left;
+  }
+  .guarantee-conditions-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    color: #3A2E28;
+    margin-bottom: 16px;
+  }
+  .conditions-list-pay { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .condition-item-pay {
+    display: flex;
+    gap: 10px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    color: #3A2E28;
+    line-height: 1.55;
+  }
+  .condition-item-pay .bullet-pay { color: #B8724F; flex-shrink: 0; }
+
+  .guarantee-note-divider { height: 1px; background: #E7D7CA; margin: 22px 0; }
+
+  .guarantee-note-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #3A2E28;
+  }
+  .guarantee-note-text + .guarantee-note-text { margin-top: 10px; }
+  .guarantee-note-text.italic { font-style: italic; color: #5C5648; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 980px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .headline { font-size: 30px; }
+    .order-card { padding: 26px 22px; }
+    .guarantee-headline { font-size: 26px; }
+    .guarantee-inner { padding: 36px 26px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 1. HEADLINE ===== -->
+<div class="headline-zone">
+  <div class="headline-inner">
+    <h1 class="headline"><span class="hl">Chỉ còn 1 bước nữa thôi!</span> Bạn sẽ chính thức bước<br>vào <span class="hl">hành trình 12 ngày</span>, để trở thành một người<br>kết nối chân thật, tự nhiên và có sức hút riêng.</h1>
+  </div>
+</div>
+
+<!-- ===== 2+3 (trái) & 4 (phải) ===== -->
+<div class="main-zone">
+  <div class="main-grid">
+
+    <!-- ============ CARD: Order info + Bump + CTA ============ -->
+    <div class="order-card">
+
+      <p class="card-section-label">Thông tin đơn hàng</p>
+      <div class="order-line">
+        <span class="order-line-name">The Inner Shift<span class="item-sub">Hành trình thực hành 12 ngày</span></span>
+        <span class="order-line-price">590.000đ</span>
+      </div>
+      <div class="order-line bump-line" id="bumpLine">
+        <span class="order-line-name">[Order bump — TODO]<span class="item-sub">Sản phẩm mua kèm</span></span>
+        <span class="order-line-price">290.000đ</span>
+      </div>
+      <div class="order-divider"></div>
+      <div class="order-total-line">
+        <span class="order-total-label">Tổng thanh toán</span>
+        <span class="order-total-price" id="totalPrice">590.000đ</span>
+      </div>
+
+      <div class="buyer-info">
+        <p class="card-section-label" style="margin-bottom:10px;">Thông tin của bạn</p>
+        <div class="buyer-row">
+          <span class="buyer-row-label">Họ và tên</span>
+          <span class="buyer-row-value" id="infoName">—</span>
+        </div>
+        <div class="buyer-row">
+          <span class="buyer-row-label">Email</span>
+          <span class="buyer-row-value" id="infoEmail">—</span>
+        </div>
+        <div class="buyer-row">
+          <span class="buyer-row-label">Số điện thoại / Zalo</span>
+          <span class="buyer-row-value" id="infoPhone">—</span>
+        </div>
+        <a href="javascript:history.back()" class="buyer-edit-link">Sửa lại thông tin</a>
+      </div>
+
+      <div class="bump-block">
+        <p class="bump-eyebrow">Ưu đãi chỉ có khi mua kèm chương trình The Inner Shift 12 ngày</p>
+        <label class="bump-item">
+          <input type="checkbox" class="bump-checkbox" id="bumpCheckbox">
+          <div class="bump-content">
+            <div class="bump-title-row">
+              <span class="bump-title">[Tên sản phẩm order bump — TODO]</span>
+              <span><span class="bump-price-old">[giá gốc]đ</span><span class="bump-price-new">290.000đ</span></span>
+            </div>
+            <p class="bump-desc">[Mô tả ngắn về sản phẩm order bump sẽ được điền vào đây khi Dung hoàn thiện nội dung.]</p>
+            <span class="bump-todo-tag">Placeholder — chờ nội dung thật</span>
+          </div>
+        </label>
+      </div>
+
+      <button class="cta-btn" id="confirmBtn">Xác nhận thông tin và thanh toán</button>
+      <p class="cta-note">Bước tiếp theo: quét mã QR và gửi bill chuyển khoản</p>
+    </div>
+
+    <!-- ============ VALUE BLOCK (nền tối, 1 khối) ============ -->
+    <div class="value-block">
+      <h2 class="value-headline">Tất cả những gì bạn sẽ được trải nghiệm:</h2>
+
+      <div class="phase-list">
+        <div class="phase-item">
+          <span class="phase-num">1</span>
+          <p class="phase-text"><strong>Bắt đầu nhìn thấy chính mình</strong> — nhận ra điều đang khiến bạn mất tự nhiên khi kết nối và những vai trò bạn đã mang vào các mối quan hệ.</p>
+        </div>
+        <div class="phase-item">
+          <span class="phase-num">2</span>
+          <p class="phase-text"><strong>Đi sâu vào những mô thức đang điều khiển mình</strong> — đọc được tín hiệu cơ thể, nhìn ra nỗi sợ phía dưới và những gì bạn đã đánh đổi để giữ yên ổn.</p>
+        </div>
+        <div class="phase-item">
+          <span class="phase-num">3</span>
+          <p class="phase-text"><strong>Tạo ra những shift đầu tiên trong đời thật</strong> — tạo khoảng dừng trước phản ứng quen thuộc và bắt đầu xây self-trust.</p>
+        </div>
+        <div class="phase-item">
+          <span class="phase-num">4</span>
+          <p class="phase-text"><strong>Xây dựng một cách kết nối mới</strong> — nhìn lại toàn bộ dịch chuyển và có lộ trình rõ ràng để tiếp tục.</p>
+        </div>
+      </div>
+
+      <div class="value-divider"></div>
+
+      <p class="bonus-section-title">Kèm theo (bonus)</p>
+      <div class="bonus-list-val">
+        <div class="bonus-item-val">
+          <span class="bonus-check">✓</span>
+          <p class="bonus-text-val"><strong>Cộng đồng Zalo đồng hành</strong> — kết nối, đặt câu hỏi và nhận hỗ trợ từ Dung trong suốt quá trình thực hành.</p>
+        </div>
+        <div class="bonus-item-val">
+          <span class="bonus-check">✓</span>
+          <p class="bonus-text-val"><strong>Workshop định kỳ cùng Dung</strong> — tham gia miễn phí mỗi 2 tháng trong vòng 1 năm.</p>
+        </div>
+        <div class="bonus-item-val">
+          <span class="bonus-check">✓</span>
+          <p class="bonus-text-val"><strong>Truy cập 12 tháng & cập nhật mới miễn phí</strong> — học lại bất cứ khi nào cần, không tốn thêm chi phí.</p>
+        </div>
+      </div>
+
+      <div class="value-divider"></div>
+
+      <p class="raise-title">Giá ưu đãi sẽ sớm tăng</p>
+      <p class="raise-body"><strong>590.000đ</strong> là mức giá ưu đãi chỉ dành cho giai đoạn ra mắt. Mức giá này sẽ tăng dần để đảm bảo chất lượng đồng hành cho mỗi người tham gia.</p>
+      <p class="raise-body" style="margin-bottom:0;">Đây không chỉ là một khóa học qua video, bạn còn được đồng hành trong cộng đồng, nên mình cần giữ số lượng ở mức có thể chăm sóc tốt.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 5. GUARANTEE (nền sáng, theo cấu trúc S11 nguyên văn) ===== -->
+<div class="guarantee-zone">
+  <div class="guarantee-inner">
+
+    <p class="guarantee-eyebrow">Cam kết hoàn tiền 100%</p>
+
+    <div class="seal-wrap">
+      <div class="seal">
+        <span class="seal-num">30</span>
+        <span class="seal-text">ngày</span>
+      </div>
+    </div>
+
+    <h2 class="guarantee-headline">
+      Nếu không có gì dịch chuyển,<br>
+      <em>bạn không mất gì cả.</em>
+    </h2>
+
+    <div class="guarantee-divider">
+      <div class="guarantee-divider-line"></div>
+      <div class="guarantee-divider-dot"></div>
+      <div class="guarantee-divider-line"></div>
+    </div>
+
+    <p class="guarantee-body-text">The Inner Shift không phải thứ bạn đọc xong rồi để đó.<br>
+    Nó được thiết kế để <strong>thực sự thay đổi cách bạn phản ứng</strong> trong các mối quan hệ — không phải trên lý thuyết, mà trong đời thật.</p>
+
+    <p class="guarantee-body-text">Vì vậy, nếu sau khi nghiêm túc thực hành, bạn vẫn cảm thấy chương trình không phù hợp hoặc không mang lại giá trị, bạn có thể yêu cầu hoàn tiền trong vòng 30 ngày.</p>
+
+    <div class="guarantee-box">
+      <p class="guarantee-conditions-intro">Để cam kết này có ý nghĩa với cả hai bên, mình mong bạn đã:</p>
+
+      <div class="conditions-list-pay">
+        <div class="condition-item-pay"><span class="bullet-pay">•</span><span>Hoàn thành ít nhất 10/12 ngày thực hành</span></div>
+        <div class="condition-item-pay"><span class="bullet-pay">•</span><span>Điền đầy đủ workbook đi kèm</span></div>
+        <div class="condition-item-pay"><span class="bullet-pay">•</span><span>Áp dụng vào ít nhất 3 tình huống thực tế trong cuộc sống</span></div>
+        <div class="condition-item-pay"><span class="bullet-pay">•</span><span>Tham gia cộng đồng Zalo và đặt câu hỏi khi cần</span></div>
+      </div>
+
+      <div class="guarantee-note-divider"></div>
+
+      <p class="guarantee-note-text">Sau đó, nếu bạn vẫn muốn hoàn tiền, chỉ cần gửi email cho mình với tiêu đề: <strong>"Yêu cầu hoàn tiền"</strong>.</p>
+      <p class="guarantee-note-text">Mình sẽ hoàn lại toàn bộ học phí cho bạn.</p>
+      <p class="guarantee-note-text italic">Bạn vẫn được giữ toàn bộ tài liệu, workbook và video đã nhận như một lời cảm ơn vì đã dành thời gian trải nghiệm chương trình.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Đọc thông tin đã lưu từ modal đăng ký (sessionStorage — key & field khớp với
+  // modal "Thông tin đăng ký" trong The_Inner_Shift_Landing_Page_v2_with_modal.html)
+  (function() {
+    try {
+      var data = JSON.parse(sessionStorage.getItem('tis_registrant') || '{}');
+      if (data.fullname) document.getElementById('infoName').textContent = data.fullname;
+      if (data.email) document.getElementById('infoEmail').textContent = data.email;
+      if (data.phone) document.getElementById('infoPhone').textContent = data.phone;
+    } catch (e) { /* không có dữ liệu hoặc key khác — giữ giá trị mặc định */ }
+  })();
+
+  // Order bump — cộng vào dòng + tổng khi tick
+  var BASE_PRICE = 590000;
+  var BUMP_PRICE = 290000;
+  var bumpCheckbox = document.getElementById('bumpCheckbox');
+  var bumpLine = document.getElementById('bumpLine');
+  var totalPriceEl = document.getElementById('totalPrice');
+
+  function formatVND(n) {
+    return n.toLocaleString('vi-VN') + 'đ';
+  }
+
+  bumpCheckbox.addEventListener('change', function() {
+    var checked = this.checked;
+    bumpLine.classList.toggle('is-active', checked);
+    var total = BASE_PRICE + (checked ? BUMP_PRICE : 0);
+    totalPriceEl.textContent = formatVND(total);
+  });
+
+  // ===== Xác nhận đơn hàng -> tạo orderId, lưu đơn, chuyển sang qr.html =====
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbzClMFaqRbKpmmKR4aIKapUkC3XGaus8k3otu6Bs54ozoOEeH7fpAKzqKNBBqj8x9S5wg/exec';
+
+  function genOrderId() {
+    var rand = Math.floor(100000 + Math.random() * 900000);
+    return 'TIS' + rand;
+  }
+
+  var confirmBtn = document.getElementById('confirmBtn');
+
+  confirmBtn.addEventListener('click', function() {
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = 'Đang xử lý...';
+
+    var registrant = {};
+    try { registrant = JSON.parse(sessionStorage.getItem('tis_registrant') || '{}'); } catch (e) {}
+
+    var bumpChecked = bumpCheckbox.checked;
+    var amount = BASE_PRICE + (bumpChecked ? BUMP_PRICE : 0);
+    var orderId = genOrderId();
+
+    var order = {
+      orderId: orderId,
+      fullname: registrant.fullname || '',
+      email: registrant.email || '',
+      phone: registrant.phone || '',
+      product: 'The Inner Shift — Hành trình thực hành 12 ngày',
+      bump: bumpChecked ? 'Order bump' : '',
+      amount: amount,
+      status: 'PENDING'
+    };
+
+    registrant.orderId = order.orderId;
+    registrant.amount = order.amount;
+    registrant.bump = order.bump;
+    sessionStorage.setItem('tis_registrant', JSON.stringify(registrant));
+
+    fetch(GAS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ action: 'create_order', order: order })
+    })
+      .catch(function() { /* tiếp tục sang qr.html, qr.html sẽ tự retry polling */ })
+      .finally(function() {
+        window.location.href = 'qr.html';
+      });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Inner Shift — Quét mã thanh toán</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; }
+  body {
+    -webkit-font-smoothing: antialiased;
+    background: #1A120D;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .card {
+    width: 100%;
+    max-width: 600px;
+    background: #241A14;
+    border: 1px solid rgba(184, 114, 79, 0.28);
+    border-radius: 20px;
+    padding: 44px 40px 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #B8724F;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  .headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #B8724F;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .sub-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(250, 243, 234, 0.78);
+    text-align: center;
+    max-width: 460px;
+    margin: 0 auto 28px;
+  }
+
+  /* ===== QR box ===== */
+  .qr-box {
+    background: #FAF3EA;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .qr-box img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+  }
+
+  /* ===== Order info box (giống thank-you.html) ===== */
+  .order-box {
+    background: rgba(0,0,0,0.18);
+    border: 1px solid rgba(250, 243, 234, 0.08);
+    border-radius: 12px;
+    padding: 6px 22px;
+    margin-bottom: 24px;
+  }
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-top: 0.5px solid rgba(250, 243, 234, 0.08);
+    font-family: 'Source Serif 4', serif;
+    font-size: 15.5px;
+  }
+  .order-row:first-child { border-top: none; }
+  .order-row-label { color: rgba(250, 243, 234, 0.55); }
+  .order-row-value { color: #FAF3EA; font-weight: 600; }
+  .order-row-value.price { color: #B8724F; font-weight: 700; }
+  .order-row-value.content { color: #B8724F; font-weight: 700; letter-spacing: 0.04em; }
+
+  /* ===== Status ===== */
+  .status-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 10px;
+    background: rgba(184, 114, 79, 0.1);
+    margin-bottom: 24px;
+  }
+  .status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #B8724F;
+    flex-shrink: 0;
+    animation: tis-pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes tis-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+  .status-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #FAF3EA;
+  }
+  .status-box.is-paid {
+    background: rgba(184, 114, 79, 0.22);
+  }
+  .status-box.is-paid .status-dot {
+    animation: none;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ===== Footer note ===== */
+  .footer-note {
+    text-align: center;
+    margin-top: 4px;
+    padding-top: 22px;
+    border-top: 0.5px solid rgba(250, 243, 234, 0.1);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(250, 243, 234, 0.5);
+  }
+  .footer-note a {
+    color: #B8724F;
+    font-weight: 600;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 32px 22px 28px; }
+    .headline { font-size: 26px; }
+    .order-box { padding: 4px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <p class="eyebrow">Bước cuối cùng</p>
+  <h1 class="headline">Quét mã để hoàn tất<br>đăng ký</h1>
+  <p class="sub-text">Mở app ngân hàng, quét mã QR bên dưới hoặc chuyển khoản đúng nội dung để hệ thống tự động xác nhận.</p>
+
+  <div class="qr-box">
+    <img id="qrImage" src="" alt="Mã QR thanh toán SePay">
+  </div>
+
+  <div class="order-box">
+    <div class="order-row">
+      <span class="order-row-label">Mã đơn</span>
+      <span class="order-row-value" id="infoOrderId">—</span>
+    </div>
+    <div class="order-row">
+      <span class="order-row-label">Số tiền</span>
+      <span class="order-row-value price" id="infoAmount">—</span>
+    </div>
+    <div class="order-row">
+      <span class="order-row-label">Nội dung CK</span>
+      <span class="order-row-value content" id="infoContent">—</span>
+    </div>
+    <div class="order-row">
+      <span class="order-row-label">Ngân hàng</span>
+      <span class="order-row-value" id="infoBank">—</span>
+    </div>
+  </div>
+
+  <div class="status-box" id="statusBox">
+    <span class="status-dot"></span>
+    <span class="status-text" id="statusText">Đang chờ xác nhận thanh toán...</span>
+  </div>
+
+  <div class="footer-note">
+    Đã chuyển khoản nhưng chưa thấy xác nhận sau vài phút? Nhắn trực tiếp cho mình qua
+    <a href="https://www.facebook.com/vuthi.dung.5015" target="_blank" rel="noopener">Facebook</a>
+    hoặc email <a href="mailto:alice.dungvu@gmail.com">alice.dungvu@gmail.com</a>
+  </div>
+</div>
+
+<script>
+  // ===== Cấu hình SePay — điền sau khi đăng ký tài khoản =====
+  var SEPAY_ACCOUNT_NUMBER = '3567341358'; // số tài khoản VPBank của Dung
+  var SEPAY_BANK_CODE = 'VPB'; // mã ngân hàng SePay, VPBank = VPB
+  var SEPAY_BANK_DISPLAY = 'VPBank';
+  var GAS_URL = 'https://script.google.com/macros/s/AKfycbzClMFaqRbKpmmKR4aIKapUkC3XGaus8k3otu6Bs54ozoOEeH7fpAKzqKNBBqj8x9S5wg/exec';
+
+  var registrant = {};
+  try { registrant = JSON.parse(sessionStorage.getItem('tis_registrant') || '{}'); } catch (e) {}
+
+  var orderId = registrant.orderId || '';
+  var amount = registrant.amount || 0;
+
+  document.getElementById('infoOrderId').textContent = orderId || '—';
+  document.getElementById('infoAmount').textContent = amount ? Number(amount).toLocaleString('vi-VN') + 'đ' : '—';
+  document.getElementById('infoContent').textContent = orderId || '—';
+  document.getElementById('infoBank').textContent = SEPAY_BANK_DISPLAY;
+
+  // QR động theo VietQR của SePay — không cần API key
+  if (orderId && amount) {
+    var qrUrl = 'https://qr.sepay.vn/img?acc=' + encodeURIComponent(SEPAY_ACCOUNT_NUMBER) +
+      '&bank=' + encodeURIComponent(SEPAY_BANK_CODE) +
+      '&amount=' + encodeURIComponent(amount) +
+      '&des=' + encodeURIComponent(orderId);
+    document.getElementById('qrImage').src = qrUrl;
+  }
+
+  // ===== Polling kiểm tra trạng thái thanh toán =====
+  var statusBox = document.getElementById('statusBox');
+  var statusText = document.getElementById('statusText');
+  var pollTimer = null;
+
+  function checkStatus() {
+    if (!orderId || !GAS_URL || GAS_URL.indexOf('__GAS_URL__') !== -1) return;
+
+    fetch(GAS_URL + '?action=check_status&orderId=' + encodeURIComponent(orderId))
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data && data.status === 'PAID') {
+          clearInterval(pollTimer);
+          statusBox.classList.add('is-paid');
+          statusText.textContent = 'Đã nhận thanh toán · Đang chuyển trang...';
+          setTimeout(function() {
+            window.location.href = 'thank-you.html';
+          }, 900);
+        }
+      })
+      .catch(function() { /* bỏ qua lỗi mạng, sẽ thử lại ở lần poll kế tiếp */ });
+  }
+
+  checkStatus();
+  pollTimer = setInterval(checkStatus, 4000);
+</script>
+
+</body>
+</html>
